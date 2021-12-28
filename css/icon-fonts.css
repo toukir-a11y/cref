@@ -1,0 +1,98 @@
+@font-face {
+	font-family: 'cref';
+	src: url('../fonts/cref.eot?31766277');
+	src: url('../fonts/cref.eot?31766277#iefix') format('embedded-opentype'),
+	 	url('../fonts/cref.woff2?31766277') format('woff2'),
+		url('../fonts/cref.woff?31766277') format('woff'),
+	 	url('../fonts/cref.ttf?31766277') format('truetype'),
+	 	url('../fonts/cref.svg?31766277#cref') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	speak: none;
+	line-height: 1;
+	font-family: 'cref';
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+ 
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	speak: none;
+	line-height: 1;
+	font-family: 'cref';
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-hospital:before { content: '\e800'; }
+.icon-integrity:before { content: '\e801'; }
+.icon-lab-test:before { content: '\e802'; }
+.icon-ok:before { content: '\e803'; }
+.icon-life-science:before { content: '\e804'; }
+.icon-logo:before { content: '\e805'; }
+.icon-operating-room:before { content: '\e806'; }
+.icon-mri:before { content: '\e807'; }
+.icon-pause:before { content: '\e808'; }
+.icon-play:before { content: '\e809'; }
+.icon-public-sector:before { content: '\e80a'; }
+.icon-pulse:before { content: '\e80b'; }
+.icon-quote:before { content: '\e80c'; }
+.icon-real-estate:before { content: '\e80d'; }
+.icon-rss:before { content: '\e80e'; }
+.icon-search:before { content: '\e80f'; }
+.icon-share:before { content: '\e810'; }
+.icon-stack-money:before { content: '\e811'; }
+.icon-thunder:before { content: '\e812'; }
+.icon-trust:before { content: '\e813'; }
+.icon-womens:before { content: '\e814'; }
+.icon-accountability:before { content: '\e815'; }
+.icon-angle-down:before { content: '\e816'; }
+.icon-angle-left:before { content: '\e817'; }
+.icon-angle-right:before { content: '\e818'; }
+.icon-angle-up:before { content: '\e819'; }
+.icon-arrow-down:before { content: '\e81a'; }
+.icon-arrow-down-alt:before { content: '\e81b'; }
+.icon-arrow-left:before { content: '\e81c'; }
+.icon-arrow-right:before { content: '\e81d'; }
+.icon-arrow-right-alt:before { content: '\e81e'; }
+.icon-arrow-up:before { content: '\e81f'; }
+.icon-book:before { content: '\e820'; }
+.icon-close:before { content: '\e821'; }
+.icon-cloud:before { content: '\e822'; }
+.icon-commercial:before { content: '\e823'; }
+.icon-commitment:before { content: '\e824'; }
+.icon-computer:before { content: '\e825'; }
+.icon-diamond:before { content: '\e826'; }
+.icon-drugs:before { content: '\e827'; }
+.icon-gears:before { content: '\e828'; }
+.icon-healthcare:before { content: '\e829'; }
+.icon-home:before { content: '\e82a'; }
+.icon-hamburger:before { content: '\e82b'; }
+.icon-block:before { content: '\e83d'; }
+.icon-twitter:before { content: '\f099'; }
+.icon-facebook:before { content: '\f09a'; }
+.icon-gplus:before { content: '\f0d5'; }
+.icon-linkedin:before { content: '\f0e1'; }
+.icon-youtube:before { content: '\f16a'; }
+.icon-instagram:before { content: '\f16d'; }
+.icon-vkontakte:before { content: '\f189'; }
+.icon-qq:before { content: '\f1d6'; }
+.icon-wechat:before { content: '\f1d7'; }
+.icon-pinterest:before { content: '\f231'; }
+.icon-whatsapp:before { content: '\f232'; }
+.icon-clone:before { content: '\f24d'; }
+.icon-reddit:before { content: '\f281'; }
+.icon-snapchat:before { content: '\f2ac'; }
+.icon-quora:before { content: '\f2c4'; }
+.icon-telegram:before { content: '\f2c6'; }
+.icon-sina:before { content: '\f33f'; }

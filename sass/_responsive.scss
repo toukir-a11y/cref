@@ -1,0 +1,3007 @@
+/***********************************
+MEDIA QUERIES
+***********************************/
+@media only screen and (max-width: 1460px) {
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {
+
+        .navbar {
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    > li {
+
+                        &.header-search {
+                            min-width: 400px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner {
+        min-height: 880px;
+
+        .banner-call-action {
+            max-width: 880px;
+        }
+    }
+
+    .home-about {
+        padding: 110px 0 390px;
+    }
+
+    /***********************************
+    CAREERS STYLES
+    ***********************************/
+    .careers-page {
+        padding-top: 130px;
+    }
+
+    .open-positions {
+        padding: 100px 0 140px;
+    }
+
+    .careers-features {
+        padding-bottom: 90px;
+    }
+
+    .careers-call-action {
+        padding-top: 90px;
+    }
+
+    .cref-activities {
+        padding-bottom: 90px;
+    }
+
+    .current-openings {
+        padding: 90px 0;
+    }
+
+    /***********************************
+    SOLUTIONS STYLES
+    ***********************************/
+    .solutions-page {
+        padding: 130px 0 90px;
+    }
+
+    .solutions-video-page {
+        padding: 130px 0 90px;
+    }
+
+    .markets-forward {
+        padding: 100px 0;
+    }
+
+    .solutions-group {
+        padding-top: 100px;
+    }
+
+    .solutions-details-page {
+        padding-top: 130px;
+
+        .entry-title {
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+        }
+
+        .management-services {
+            margin-top: 60px;
+        }
+    }
+
+    .success-story {
+        padding: 90px 0;
+    }
+
+    .representative {
+        padding: 90px 0;
+
+        .testimonial {
+            margin-top: 60px;
+        }
+    }
+
+    .crefsolutions {
+        padding-top: 90px;
+    }
+
+    .icref-suite {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    /***********************************
+    TEAM DETAILS STYLES
+    ***********************************/
+    .all-team-members {
+        padding-bottom: 20px;
+    }
+
+    /***********************************
+    ABOUT STYLES
+    ***********************************/
+    .about-page {
+        padding-top: 130px;
+
+        .entry-title {
+
+            .btn {
+                padding: 40px 45px;
+            }
+        }
+    }
+
+    .leadership-team {
+        padding-bottom: 90px;
+    }
+
+    .core-values {
+        padding: 120px 0;
+    }
+
+    .partners-introduction {
+        padding-bottom: 120px;
+    }
+
+    .software-suite {
+        padding: 90px 0;
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .popularposts {
+        padding-top: 60px;
+    }
+
+    /***********************************
+    CONTACT STYLES
+    ***********************************/
+    .contact-page {
+        padding-top: 130px;
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .footer {
+
+        .footer-menu {
+            margin-bottom: 40px;
+        }
+
+        .copyright-wrapper {
+            margin-top: 40px;
+        }
+    }
+
+}/* 1460 */
+
+@media only screen and (max-width: 1366px) {
+
+    .container-fluid {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {
+
+        .navbar {
+
+            .navbar-header {
+
+                .logo {
+                    padding-left: 25px;
+                    padding-right: 25px;
+                }
+            }
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    > li {
+
+                        > a {
+                            padding-left: 25px;
+                            padding-right: 25px;
+                        }
+
+                        &.social {
+                            padding-left: 25px;
+                            padding-right: 25px;
+                        }
+
+                        &.header-search {
+                            min-width: 350px;
+
+                            .search-wrap {
+
+                                .search-box {
+
+                                    .search-input {
+                                        padding-left: 25px !important;
+                                        padding-right: 60px !important;
+                                    }
+
+                                    .search-submit {
+                                        right: 25px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sidr-open {
+
+        .sidr {
+
+            .sidr-inner {
+
+                .navbar-header {
+
+                    .logo {
+                        left: 195px;
+                    }
+                }
+            }
+        }
+    }
+
+    .sidr {
+
+        .sidr-inner {
+
+            .navbar-header {
+
+                .logo {
+                    padding-left: 25px;
+                    padding-right: 25px;
+                }
+            }
+        }
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner {
+        min-height: 850px;
+
+        .content {
+
+            p {
+                max-width: 400px;
+            }
+        }
+
+        .banner-call-action {
+            max-width: 830px;
+        }
+    }
+
+    .integrated-services {
+        padding: 80px 0;
+    }
+
+    .home-about {
+
+        .popup-video {
+            min-height: 450px;
+
+            &:after {
+                width: 90px;
+                height: 90px;
+                font-size: 30px;
+                line-height: 92px;
+            }
+        }
+    }
+
+    .home-about {
+        padding-top: 100px;
+    }
+
+    /***********************************
+    CAREERS STYLES
+    ***********************************/
+    .careers-page {
+        padding-top: 110px;
+    }
+
+    .open-positions {
+        padding: 90px 0 120px;
+    }
+
+    .careers-features {
+        padding-bottom: 80px;
+    }
+
+    .careers-call-action {
+        padding-top: 80px;
+    }
+
+    .cref-activities {
+        padding-bottom: 80px;
+    }
+
+    .current-openings {
+        padding: 80px 0;
+    }
+
+    /***********************************
+    SOLUTIONS STYLES
+    ***********************************/
+    .solutions-page {
+        padding: 120px 0 90px;
+    }
+
+    .solutions-video-page {
+        padding: 120px 0 90px;
+    }
+
+    .markets-forward {
+        padding: 90px 0;
+    }
+
+    .solutions-group {
+        padding-top: 90px;
+    }
+
+    .solutions-group-item {
+        padding-bottom: 80px;
+    }
+
+    .solutions-details-page {
+        padding-top: 120px;
+        padding-bottom: 90px;
+
+        .entry-title {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+        }
+
+        .management-services {
+            margin-top: 50px;
+        }
+    }
+
+    .success-story {
+        padding: 80px 0;
+    }
+
+    .representative {
+        padding: 80px 0;
+
+        .testimonial {
+            margin-top: 50px;
+        }
+    }
+
+    .crefsolutions {
+        padding-top: 80px;
+    }
+
+    .icref-suite {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    /***********************************
+    TEAM DETAILS STYLES
+    ***********************************/
+    .all-team-members {
+        padding-bottom: 10px;
+
+        .slider-progress {
+            margin-top: 40px;
+        }
+    }
+
+    /***********************************
+    ABOUT STYLES
+    ***********************************/
+    .about-page {
+        padding-top: 120px;
+
+        .entry-title {
+            margin-bottom: 70px;
+
+            .btn {
+                margin-top: 50px;
+                padding: 30px 40px;
+                padding-right: 150px;
+            }
+        }
+    }
+
+    .leadership-team {
+        padding-bottom: 80px;
+    }
+
+    .core-values {
+        padding: 100px 0;
+    }
+
+    .partners-introduction {
+        padding-bottom: 100px;
+    }
+
+    .software-suite {
+        padding: 80px 0;
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .popularposts {
+        padding-top: 50px;
+    }
+
+    .blog-details-page {
+        padding-bottom: 80px;
+    }
+
+    /***********************************
+    CONTACT STYLES
+    ***********************************/
+    .contact-page {
+        padding: 120px 0 90px;
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .footer {
+
+        .footer-menu {
+            margin-bottom: 30px;
+        }
+
+        .copyright-wrapper {
+            margin-top: 30px;
+        }
+    }
+
+}/* 1366 */
+
+@media only screen and (max-width: 1199px) {
+
+    h1, .h1 { font-size: 55px; line-height: 68px; }
+    
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {
+
+        .navbar {
+
+            .navbar-header {
+
+                .navbar-toggler {
+                    width: 70px;
+                    padding: 26px 25px;
+                }
+
+                .logo {
+                    padding: 3px 20px;
+
+                    img {
+                        max-width: 60px;
+                    }
+                }
+            }
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    > li {
+
+                        > a {
+                            padding: 21px 20px;
+                        }
+
+                        &.social {
+                            padding: 19px 20px;
+                        }
+
+                        &.header-search {
+                            min-width: 250px;
+                            max-width: 250px;
+
+                            .search-wrap {
+
+                                .search-box {
+
+                                    .search-input {
+                                        padding: 21px 20px !important;
+                                        padding-right: 55px !important;
+                                    }
+
+                                    .search-submit {
+                                        right: 20px;
+                                        font-size: 22px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sidr-open {
+
+        .sidr {
+
+            .sidr-inner {
+
+                .navbar-header {
+
+                    .logo {
+                        left: 210px;
+                    }
+                }
+            }
+        }
+    }
+
+    .sidr {
+
+        .sidr-inner {
+
+            .navbar-header {
+
+                .navbar-toggler {
+                    width: 70px;
+                    padding: 27px 25px;
+                }
+
+                .logo {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner {
+        min-height: 800px;
+
+        .banner-call-action {
+            max-width: 700px;
+        }
+    }
+
+    .integrated-services {
+        padding: 70px 0;
+    }
+
+    .asset-management {
+        padding-bottom: 70px;
+    }
+
+    .home-about {
+        padding-top: 90px;
+
+        .popup-video {
+            min-height: 400px;
+        }
+    }
+
+    .story-item {
+        min-height: 340px;
+    }
+
+    /***********************************
+    CAREERS STYLES
+    ***********************************/
+    .careers-page {
+        padding-top: 90px;
+    }
+
+    .open-positions {
+        padding: 80px 0 100px;
+    }
+
+    .careers-features {
+        padding-bottom: 70px;
+    }
+
+    .careers-call-action {
+        padding-top: 70px;
+    }
+
+    .cref-activities {
+        padding-bottom: 70px;
+    }
+
+    .current-openings {
+        padding: 70px 0;
+    }
+
+    /***********************************
+    SOLUTIONS STYLES
+    ***********************************/
+    .solutions-page {
+        padding: 100px 0 80px;
+    }
+
+    .solutions-video-page {
+        padding: 100px 0 80px;
+    }
+
+    .markets-forward {
+        padding: 80px 0;
+    }
+
+    .solutions-group {
+        padding: 80px 0;
+    }
+
+    .solutions-group-item {
+        padding-bottom: 70px;
+    }
+
+    .icref-integrated {
+        padding-top: 70px;
+    }
+
+    .solutions-details-page {
+        padding-top: 100px;
+        padding-bottom: 80px;
+    }
+
+    .success-story {
+        padding: 70px 0;
+    }
+
+    .representative {
+        padding: 70px 0;
+    }
+
+    .crefsolutions {
+        padding: 70px 0;
+    }
+
+    .strategic_planning_slider {
+        height: 450px;
+    }
+
+    /***********************************
+    TEAM DETAILS STYLES
+    ***********************************/
+    .all-team-members {
+        padding-bottom: 0;
+
+        .slider-progress {
+            margin-top: 30px;
+        }
+    }
+
+    /***********************************
+    ABOUT STYLES
+    ***********************************/
+    .about-page {
+        padding-top: 100px;
+        padding-bottom: 70px;
+
+        .entry-title {
+            margin-bottom: 60px;
+
+            .btn {
+                margin-top: 40px;
+                padding: 20px 30px;
+                padding-right: 140px;
+            }
+        }
+    }
+
+    .leadership-team {
+        padding-bottom: 70px;
+    }
+
+    .core-values {
+        padding: 80px 0;
+    }
+
+    .partners-introduction {
+        padding-bottom: 80px;
+    }
+
+    .partner-item {
+
+        &.big {
+            min-height: 380px;
+            padding: 20px 18px 30px 20px;
+        }
+
+        .quote-item {
+
+            p {
+                line-height: 25px;
+            }
+
+            .bottom {
+                margin-top: 14px;
+            }
+        }
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .featured-post {
+
+        &.big {
+            padding-top: 80px;
+
+            .text {
+
+                p {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+
+    .popularposts {
+        padding-top: 40px;
+    }
+
+    .blog-page {
+        padding: 70px 0;
+    }
+
+    .blog-details-page {
+        padding-bottom: 70px;
+    }
+
+    /***********************************
+    CONTACT STYLES
+    ***********************************/
+    .contact-page {
+        padding: 100px 0 80px;
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .call-action {
+
+        .content {
+            padding: 60px;
+        }
+    }
+
+    .footer {
+        padding: 70px 0;
+
+        .footer-menu {
+
+            ul {
+                margin-left: -25px;
+                margin-right: -25px;
+
+                li {
+                    padding-left: 25px;
+                    padding-right: 25px;
+                }
+            }
+        }
+
+        .copyright-wrapper {
+            margin-top: 20px;
+        }
+    }
+
+}/* 1199 */
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    /* force ipad dropdown carats */
+    .open .dropdown-menu>li,
+    .open .dropdown-menu>li>a:hover {
+        display:inline-block!important;
+    }
+
+}/* iPad Portrait and Landscape */
+
+@media only screen and (max-width: 1060px) {
+
+    .banner {
+
+        .banner-call-action {
+            max-width: 660px;
+
+            .cta {
+                padding: 50px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+
+    .banner {
+
+        .banner-call-action {
+            max-width: 600px;
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+
+    h1, .h1 { font-size: 48px; line-height: 61px; }
+    h2, .h2 { font-size: 42px; line-height: 54px; }
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {
+
+        .navbar {
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    > li {
+
+                        > a {
+                            padding: 21px 20px;
+                        }
+
+                        &.header-search {
+                            min-width: 195px;
+                            max-width: 195px;
+                        }
+                    }
+
+                    &:not(.navbar-nav-right) {
+
+                        > li {
+                            
+                            &:nth-child(1) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner {
+        min-height: 700px;
+        padding: 120px 0 165px;
+
+        .content {
+            max-width: 410px;
+
+            p {
+                font-size: 20px;
+                max-width: 360px;
+                line-height: 30px;
+            }
+        }
+
+        .banner-call-action {
+            max-width: 560px;
+
+            .cta {
+                padding: 40px;
+            }
+        }
+    }
+
+    .integrated-services {
+        padding: 60px 0;
+    }
+
+    .home-icref-suite {
+
+        &:before {
+            height: 310px;
+        }
+
+        .media {
+            margin-left: 30px;
+        }
+    }
+
+    .home-about {
+        padding: 80px 0 380px;
+
+        .popup-video {
+            min-height: 370px;
+
+            &:after {
+                width: 80px;
+                height: 80px;
+                font-size: 28px;
+                line-height: 82px;
+            }
+        }
+    }
+
+    .story-item {
+        min-height: 280px;
+
+        .text {
+            padding: 20px;
+        }
+    }
+
+    /***********************************
+    CAREERS STYLES
+    ***********************************/
+    .careers-page {
+        padding-top: 70px;
+
+        .popup-video {
+            min-height: 400px;
+
+            &:after {
+                width: 80px;
+                height: 80px;
+                font-size: 26px;
+                line-height: 82px;
+            }
+        }
+    }
+
+    .open-positions {
+        padding: 70px 0 80px;
+    }
+
+    .careers-features {
+        padding-bottom: 60px;
+    }
+
+    .careers-call-action {
+        padding-top: 60px;
+    }
+
+    .cref-activities {
+        padding-bottom: 60px;
+    }
+
+    .current-openings {
+        padding: 60px 0;
+    }
+
+    /***********************************
+    SOLUTIONS STYLES
+    ***********************************/
+    .solutions-page {
+        padding: 90px 0 70px;
+    }
+
+    .solution-item {
+        padding-left: 30px;
+        padding-bottom: 30px;
+    }
+
+    .solutions-video-page {
+        padding: 90px 0 70px;
+    }
+
+    .markets-forward {
+        padding: 70px 0;
+
+        .content {
+            max-width: 100%;
+        }
+    }
+
+    .solutions-group {
+        padding: 70px 0;
+    }
+
+    .solutions-group-item {
+        padding-bottom: 60px;
+    }
+
+    .solutions-details-page {
+        padding-top: 90px;
+        padding-bottom: 70px;
+
+        .content {
+            max-width: 100%;
+            margin-bottom: 40px;
+        }
+    }
+
+    .success-story {
+        padding: 60px 0;
+
+        .content {
+            margin-bottom: 40px;
+        }
+    }
+
+    .representative {
+        padding: 60px 0;
+    }
+
+    .crefsolutions {
+        padding: 60px 0;
+    }
+
+    .strategic_planning_slider {
+        height: 400px;
+    }
+
+    /***********************************
+    TEAM DETAILS STYLES
+    ***********************************/
+    .team-details-page {
+        padding-bottom: 60px;
+    }
+
+    /***********************************
+    ABOUT STYLES
+    ***********************************/
+    .about-page {
+        padding-top: 90px;
+
+        .entry-title {
+            margin-bottom: 50px;
+        }
+
+        .content {
+            margin-bottom: 40px;
+        }
+
+        .about-features {
+            padding: 40px 30px;
+
+            .about-feature {
+
+                .number {
+                    min-width: 95px;
+                }
+            }
+        }
+    }
+
+    .core-values {
+        padding: 70px 0;
+    }
+
+    .core-value {
+
+        .text {
+            max-width: 350px;
+        }
+    }
+
+    .partners-introduction {
+        padding: 70px 0;
+    }
+
+    .partner-item {
+
+        &.big {
+            min-height: inherit;
+            padding-bottom: 42px;
+        }
+    }
+
+    .software-suite {
+        padding: 70px 0;
+
+        .entry-title {
+
+            p {
+                max-width: 100%;
+            }
+        }
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .featured-posts {
+        padding-bottom: 60px;
+    }
+
+    .featured-post {
+
+        &.big {
+            padding: 70px 30px 30px;
+
+            .media {
+                -ms-flex: 0 0 50%;
+                -webkit-box-flex: 0;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .text {
+                -ms-flex: 0 0 50%;
+                -webkit-box-flex: 0;
+                flex: 0 0 50%;
+                max-width: 50%;
+
+                p {
+                    font-size: 18px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+
+    .popularposts {
+        padding-top: 30px;
+        padding-bottom: 60px;
+    }
+
+    .blog-page {
+        padding: 60px 0;
+    }
+
+    .blog-details-page {
+        padding-bottom: 60px;
+
+        .main-content {
+
+            .share-button {
+                margin-bottom: 40px;
+            }
+
+            .entry-footer {
+                padding: 40px 35px;
+            }
+        }
+    }
+
+    .sidebar {
+        margin-top: 40px;
+
+        .widget {
+            margin-bottom: 30px;
+        }
+    }
+
+    /***********************************
+    CONTACT STYLES
+    ***********************************/
+    .contact-page {
+        padding: 90px 0 70px;
+
+        .entry-title {
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+        .content {
+            margin-bottom: 40px;
+        }
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .call-action {
+        padding: 60px 0;
+
+        .content {
+            padding: 50px;
+        }
+    }
+
+    .footer {
+        padding: 60px 0;
+
+        .footer-logo {
+            margin-bottom: 30px;
+
+            a {
+
+                img {
+                    max-width: 160px;
+                }
+            }
+        }
+
+        .footer-menu {
+            margin-bottom: 20px;
+        }
+
+        .footer-widget {
+            margin-bottom: 30px;
+        }
+
+        .copyright-wrapper {
+            margin-top: 10px;
+        }
+    }
+
+    /* Basic Template Styles */
+    .basic_left, .basic_right { 
+        
+        img {
+            float: none; 
+            margin: 0 auto 50px auto; 
+        }
+    }
+
+    .basic {
+
+        .btn { 
+            clear: both !important; 
+            display: block !important; 
+            // min-width: 225px; 
+            // max-width: 340px; 
+        } 
+    }
+
+}/* 991 */
+
+@media only screen and (max-width: 870px) {
+
+    .banner {
+
+        .content {
+
+            p {
+                max-width: 260px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    h1, .h1 { font-size: 42px; line-height: 54px; }
+    h2, .h2 { font-size: 36px; line-height: 44px; }
+    h3, .h3 { font-size: 30px; line-height: 36px; }
+    h4, .h4 { font-size: 24px; line-height: 32px; }
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {
+
+        .navbar {
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    &:not(.navbar-nav-right) {
+
+                        > li {
+                            
+                            &:nth-child(2) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    BANNER STYLES
+    ***********************************/
+    .banner {
+        padding-bottom: 0;
+        min-height: 650px;
+
+        .content {
+            margin-bottom: -30px;
+
+            p {
+                max-width: 100%;
+            }
+        }
+
+        .banner-call-action {
+            position: inherit;
+        }
+    }
+
+    .integrated-services {
+        padding: 50px 0;
+    }
+
+    .asset-management {
+        padding-bottom: 50px;
+
+        .media {
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .minus {
+            margin-bottom: -40px;
+        }
+    }
+
+    .asset-item {
+        margin-bottom: 40px;
+        height: calc(100% - 40px);
+    }
+
+    .home-icref-suite {
+
+        &:before {
+            width: 70%;
+            height: 320px;
+        }
+
+        .entry-title {
+            max-width: 100%;
+            margin-bottom: 40px;
+
+            .title {
+                max-width: 100%;
+            }
+        }
+
+        .media {
+
+            img {
+                width: 70%;
+                margin-right: 0;
+                margin-left: auto;
+            }
+        }
+    }
+
+    .home-about {
+        padding: 70px 0 360px;
+
+        .popup-video {
+            margin-top: 30px;
+            min-height: 340px;
+        }
+
+        .entry-title {
+
+            .title {
+                max-width: 100%;
+            }
+
+            p {
+                max-width: 100%;
+            }
+        }
+    }
+
+    /***********************************
+    CAREERS STYLES
+    ***********************************/
+    .careers-page {
+        padding: 60px 0 50px;
+
+        .popup-video {
+            min-height: 350px;
+
+            &:after {
+                width: 70px;
+                height: 70px;
+                font-size: 24px;
+                line-height: 72px;
+            }
+        }
+    }
+
+    .open-positions {
+        padding: 60px 0;
+    }
+
+    .careers-features {
+        padding-bottom: 50px;
+    }
+
+    .careers-call-action {
+        padding-top: 50px;
+    }
+
+    .cref-activities {
+        padding-bottom: 50px;
+    }
+
+    .current-openings {
+        padding: 50px 0;
+    }
+
+    /***********************************
+    SOLUTIONS STYLES
+    ***********************************/
+    .solutions-page {
+        padding: 80px 0 60px;
+    }
+
+    .solution-item {
+        padding-left: 24px;
+        padding-bottom: 24px;
+
+        .text {
+
+            .btn {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .solutions-video-page {
+        padding: 80px 0 60px;
+    }
+
+    .markets-forward {
+        padding: 60px 0;
+    }
+
+    .drives-market-item {
+
+        .text {
+
+            .btn {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .solutions-group {
+        padding: 60px 0;
+    }
+
+    .solutions-group-item {
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+
+        .content {
+            margin-bottom: 30px;
+        }
+    }
+
+    .icref-integrated {
+        padding: 60px 0;
+    }
+
+    .solutions-details-page {
+        padding-top: 80px;
+        padding-bottom: 60px;
+
+        .entry-title {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+        }
+
+        .content {
+            
+            .btn {
+                margin-top: 20px;
+            }
+        }
+
+        .minus {
+            margin-bottom: -30px;
+        }
+
+        .management-services {
+            margin-top: 40px;
+
+            .services {
+                column-count: 2;
+            }
+        }
+    }
+
+    .solution-feature {
+        margin-bottom: 30px;
+
+        .icon {
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            min-width: 70px;
+            line-height: 70px;
+            margin-right: 10px;
+        }
+    }
+
+    .success-story {
+        padding: 50px 0;
+
+        .content {
+
+            .content-block {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .representative {
+        padding: 50px 0;
+
+        .entry-title {
+
+            .title {
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin-bottom: 20px !important;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            max-width: 100%;
+        }
+
+        p {
+            max-width: 100%;
+        }
+
+        .btn {
+            margin-bottom: 30px;
+        }
+
+        .testimonial {
+            margin-top: 40px;
+        }
+    }
+
+    .crefsolutions {
+        padding: 50px 0;
+    }
+
+    .icref-suite {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .mfp-strategic-planning {
+
+        .mfp-container {
+
+            .mfp-content {
+
+                .white-popup {
+
+                    .mfp-close {
+                        top: 20px;
+                        width: 20px;
+                        right: 20px;
+                        height: 20px;
+                        font-size: 20px;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .strategic_planning_slider {
+        height: 350px;
+    }
+
+    /***********************************
+    TEAM DETAILS STYLES
+    ***********************************/
+    .team-details-page {
+        padding-bottom: 50px;
+    }
+
+    /***********************************
+    ABOUT STYLES
+    ***********************************/
+    .about-page {
+        padding-top: 80px;
+        padding-bottom: 60px;
+
+        .entry-title {
+            margin-bottom: 40px;
+
+            .btn {
+                font-size: 20px;
+                margin-top: 30px;
+                padding: 15px 25px;
+                padding-right: 140px;
+            }
+        }
+
+        .about-features {
+
+            .about-feature {
+
+                .number {
+                    min-width: 85px;
+
+                    span {
+                        line-height: 40px;
+                    }
+                }
+
+                .text {
+
+                    p {
+                        line-height: 26px;
+                    }
+                }
+            }
+        }
+    }
+
+    .leadership-team {
+        padding: 60px 0;
+    }
+
+    .core-values {
+        padding: 60px 0;
+    }
+
+    .core-value {
+
+        .icon {
+            font-size: 54px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .partners-introduction {
+        padding: 60px 0;
+    }
+
+    .partner-item {
+        height: 140px;
+        min-height: auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        &.big {
+            height: auto;
+
+            img {
+                width: auto;
+                height: auto;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .software-suite {
+        padding: 60px 0;
+
+        .entry-title {
+            text-align: center;
+            margin-bottom: 40px;
+
+            .title {
+                max-width: 100%;
+            }
+        }
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .featured-posts {
+        padding-bottom: 50px;
+    }
+
+    .featured-post {
+
+        &.big {
+            padding: 50px 20px 30px;
+        }
+    }
+
+    .popularposts {
+        padding-bottom: 50px;
+    }
+
+    .blog-page {
+        padding: 50px 0;
+    }
+
+    .blog-details-page {
+        padding-bottom: 50px;
+
+        .main-content {
+
+            .share-button {
+                margin-bottom: 30px;
+            }
+
+            .entry-footer {
+                padding: 30px;
+            }
+        }
+    }
+
+    .sidebar {
+        margin-top: 30px;
+    }
+
+    /***********************************
+    CONTACT STYLES
+    ***********************************/
+    .contact-page {
+        padding: 80px 0 60px;
+
+        .entry-title {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .call-action {
+        padding: 50px 0;
+
+        .content {
+            padding: 40px;
+        }
+    }
+
+    .footer {
+        padding: 50px 0;
+
+        .footer-logo {
+
+            a {
+
+                img {
+                    max-width: 140px;
+                }
+            }
+        }
+
+        .footer-menu {
+
+            ul {
+                margin-left: -15px;
+                margin-right: -15px;
+
+                li {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+        }
+
+        .copyright-wrapper {
+            margin-top: 0;
+        }
+    }
+
+}/* 767 */
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .careers-features {
+
+        .zero {
+
+            [class^="col-"] {
+
+                &:nth-child(1) {
+                    order: 2;
+                }
+
+                &:nth-child(2) {
+                    order: 1;
+                }
+
+                &:nth-child(3) {
+                    order: 3;
+                }
+
+                &:nth-child(4) {
+                    order: 4;
+                }
+
+                &:nth-child(5) {
+                    order: 6;
+                }
+
+                &:nth-child(6) {
+                    order: 5;
+                }
+
+                &:nth-child(7) {
+                    order: 7;
+                }
+
+                &:nth-child(8) {
+                    order: 8;
+                }
+
+                &:nth-child(9) {
+                    order: 10;
+                }
+
+                &:nth-child(10) {
+                    order: 9;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 680px) {
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {
+
+        .navbar {
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    &:not(.navbar-nav-right) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    BANNER STYLES
+    ***********************************/
+    .banner {
+        min-height: 650px;
+
+        .content {
+            margin-bottom: 10px;
+        }
+    }
+
+    .home-icref-suite {
+
+        &:before {
+            height: 280px;
+        }
+    }
+
+    .home-about {
+        padding: 60px 0 350px;
+    }
+
+    .popularpost {
+
+        .text {
+            padding: 18px;
+        }
+    }
+
+    /***********************************
+    CAREERS STYLES
+    ***********************************/
+    .careers-page {
+        padding: 50px 0 0;
+
+        .entry-title {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+        }
+
+        .popup-video {
+            min-height: 300px;
+
+            .text {
+                padding: 20px;
+            }
+        }
+    }
+
+    .open-positions {
+        padding: 50px 0;
+    }
+
+    .careers-features {
+        padding: 0 0 50px;
+    }
+
+    .careers-call-action {
+        padding: 50px 0;
+    }
+
+    .cref-activities {
+        padding: 50px 0;
+    }
+
+    .current-openings {
+        padding: 40px 0;
+    }
+
+    /***********************************
+    SOLUTIONS STYLES
+    ***********************************/
+    .solutions-page {
+        padding-top: 70px;   
+    }
+
+    .solutions-video-page {
+        padding: 70px 0 50px;
+
+        .entry-title {
+
+            .anchor-links {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .markets-forward {
+        padding: 50px 0;
+    }
+
+    .solutions-group {
+        padding: 50px 0;
+    }
+
+    .solutions-group-item {
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+    }
+
+    .icref-integrated {
+        padding: 50px 0;
+
+        .icref-suite {
+
+            .entry-title {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .solutions-details-page {
+        padding-top: 70px;
+        padding-bottom: 50px;
+    }
+
+    .strategic_planning_slider {
+        height: 300px;
+    }
+
+    /***********************************
+    ABOUT STYLES
+    ***********************************/
+    .about-page {
+        padding-top: 70px;
+        padding-bottom: 50px;
+
+        .entry-title {
+            margin-bottom: 30px;
+
+            .btn {
+                font-size: 18px;
+                line-height: 26px;
+                padding: 10px 20px;
+                padding-right: 130px;
+
+                span {
+                    width: 100px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .about-features {
+
+            .about-feature {
+
+                .number {
+                    min-width: 80px;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+
+    .leadership-team {
+        padding: 50px 0;
+    }
+
+    .core-values {
+        padding: 50px 0;
+
+        .entry-title {
+            margin-bottom: 30px;
+        }
+    }
+
+    .core-value {
+
+        .icon {
+            font-size: 48px;
+        }
+    }
+
+    .partners-introduction {
+        padding: 50px 0;
+    }
+
+    .partner-item {
+        height: 120px;
+    }
+
+    .software-suite {
+        padding: 50px 0;
+
+        .entry-title {
+            margin-bottom: 30px;
+        }
+    }
+
+    /* Basic Template Styles */
+    .basic { 
+        padding: 25px 0; 
+
+        ul { 
+            margin-left: 20px; 
+        } 
+    }
+
+    .basic_middle {
+
+        p { 
+            -webkit-columns: 1; 
+            -moz-columns: 1; 
+            columns: 1; 
+            -webkit-column-gap: 0px; 
+            -moz-column-gap: 0px; 
+            column-gap: 0px; 
+        }
+    }
+
+    .basic_left, .basic_right {
+
+        img { 
+            margin: 0 auto 30px auto; 
+        }
+    }
+
+    .basic_container {
+
+        .btn {
+            //padding: 15px 0;
+        }
+    }
+
+}/* 680 */
+
+@media only screen and (max-width: 575px) {
+
+    body, .body { font-size: 16px; line-height: 24px; }
+
+    h1, .h1 { font-size: 36px; line-height: 44px; }
+    h2, .h2 { font-size: 30px; line-height: 36px; }
+    h3, .h3 { font-size: 28px; line-height: 34px; }
+    h4, .h4 { font-size: 20px; line-height: 30px; }
+
+    section {
+        padding: 30px 0;
+    }
+
+    .col {
+        width: 100%;
+    }
+
+    .btn {
+        padding: 10px 15px;
+    }
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {
+
+        .navbar {
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    > li {
+
+                        &.header-search {
+                            min-width: initial;
+                            max-width: initial;
+
+                            .search-wrap {
+
+                                .search-toggle {
+                                    display: block;
+                                    font-size: 22px;
+                                    padding: 23px 24px;
+                                }
+
+                                .search-box {
+                                    right: 0;
+                                    top: 150%;
+                                    opacity: 0;
+                                    max-width: 280px;
+                                    position: absolute;
+                                    visibility: hidden;
+                                    background: #F0EFE7;
+                                    transition: all ease 300ms;
+                                    box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.12);
+
+                                    .search-input {
+                                        padding-top: 20px !important;
+                                        padding-right: 75px !important;
+                                        padding-bottom: 20px !important;
+                                    }
+
+                                    .search-submit {
+                                        top: 0;
+                                        right: 0;
+                                        color: $white;
+                                        padding: 22px 24px;
+                                        background: $primary;
+
+                                        &:after {
+                                            top: -20px;
+                                            content: "";
+                                            position: absolute;
+                                            left: calc(50% - 10px);
+                                            border: 10px solid transparent;
+                                            border-bottom-color: $primary;
+                                        }
+                                    }
+                                }
+
+                                &.search-show {
+
+                                    .search-toggle {
+                                        color: $white;
+                                        background: $base;
+
+                                        .icon-search {
+
+                                            &:before {
+                                                content: "";
+                                            }
+                                        }
+                                    }
+
+                                    .search-box {
+                                        top: 100%;
+                                        opacity: 1;
+                                        visibility: visible;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sidr-open {
+
+        .sidr {
+
+            .sidr-inner {
+
+                .navbar-header {
+
+                    .logo {
+                        left: 145px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .sidr {
+        max-width: 320px;
+
+        .sidr-inner {
+
+            .navigation {
+
+                .navbar-nav {
+
+                    > li {
+
+                        > a {
+                            font-size: 20px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    BANNER STYLES
+    ***********************************/
+    .banner {
+        min-height: auto;
+
+        .content {
+            margin-bottom: 20px;
+        }
+
+        .banner-call-action {
+
+            .cta {
+                padding: 30px;
+            }
+        }
+
+        .scrollDown {
+            font-size: 40px;
+        }
+    }
+
+    .asset-management {
+        padding-bottom: 40px;
+    }
+
+    .asset-item {
+        padding-left: 10px;
+
+        i {
+            font-size: 24px;
+        }
+    }
+
+    .integrated-services {
+        padding: 40px 0;
+    }
+
+    .home-icref-suite {
+
+        &:before {
+            width: 100%;
+        }
+
+        .media {
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .home-about {
+        padding-top: 50px;
+
+        .popup-video {
+            min-height: 300px;
+
+            &:after {
+                width: 70px;
+                height: 70px;
+                font-size: 24px;
+                line-height: 72px;
+            }
+
+            .text {
+                padding: 20px;
+            }
+        }
+    }
+
+    .featured-stories {
+
+        .entry-title {
+            margin-bottom: 20px;
+        }
+    }
+
+    .story-item {
+        min-height: 250px;
+
+        .text {
+            padding: 15px;
+        }
+    }
+
+    /***********************************
+    CEREER STYLES
+    ***********************************/
+    .careers-page {
+        padding: 40px 0 0;
+
+        .popup-video {
+
+            &:after {
+                margin-top: -30px;
+            }
+        }
+    }
+
+    .careers-features {
+        padding: 0 0 40px;
+    }
+
+    .careers-call-action {
+        padding: 40px 0;
+    }
+
+    .cref-activities {
+        padding: 40px 0;
+
+        .entry-title {
+            margin-bottom: 20px;
+        }
+    }
+
+    /***********************************
+    SOLUTIONS STYLES
+    ***********************************/
+    .solutions-page {
+        padding: 60px 0 50px;
+    }
+
+    .solution-item {
+        padding: 20px;
+
+        .text {
+
+            .btn {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .solutions-video-page {
+        padding: 60px 0 40px;
+    }
+
+    .markets-forward {
+        padding: 40px 0;
+
+        .content {
+            margin-bottom: 20px;
+        }
+    }
+
+    .solutions-group {
+        padding: 40px 0;
+    }
+
+    .icref-integrated {
+        padding: 40px 0;
+    }
+
+    .solutions-details-page {
+        padding-top: 60px;
+        padding-bottom: 40px;
+
+        .content {
+            margin-bottom: 30px;
+        }
+
+        .management-services {
+            margin-top: 30px;
+            padding-top: 30px;
+
+            .title {
+                margin-bottom: 10px;
+            }
+
+            .services {
+                column-count: 1;
+            }
+        }
+    }
+
+    .solution-feature {
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            font-size: 25px;
+            min-width: 60px;
+            line-height: 60px;
+        }
+    }
+
+    .success-story {
+        padding: 40px 0;
+
+        .entry-title {
+            margin-bottom: 20px;
+        }
+
+        .content {
+            margin-bottom: 30px;
+        }
+    }
+
+    .representative {
+        padding: 40px 0;
+
+        .testimonial {
+            margin-top: 30px;
+
+            .blockquote {
+
+                .icon {
+                    max-width: 60px;
+                    margin-right: 0;
+                    margin-bottom: 15px;
+                    float: none !important;
+
+                    img {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .quote {
+
+                    p {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    .crefsolutions {
+        padding: 40px 0;
+    }
+
+    .solution-box {
+        padding-bottom: 24px;
+
+        .bottom {
+            margin-top: 20px;
+        }
+    }
+
+    .icref-suite {
+        padding-top: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /***********************************
+    TEAM DETAILS STYLES
+    ***********************************/
+    .team-details-page {
+        padding: 40px 0;
+
+        .media {
+            margin-bottom: 30px;
+        }
+    }
+
+    /***********************************
+    ABOUT STYLES
+    ***********************************/
+    .about-page {
+        padding-top: 60px;
+        padding-bottom: 40px;
+
+        .entry-title {
+
+            .btn {
+                padding-right: 100px;
+
+                span {
+                    width: 80px;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .about-features {
+            padding: 30px 20px;
+
+            .about-feature {
+
+                .number {
+                    min-width: 70px;
+                }
+            }
+        }
+    }
+
+    .leadership-team {
+        padding: 40px 0;
+    }
+
+    .core-values {
+        padding: 40px 0;
+    }
+
+    .partners-introduction {
+        padding: 40px 0;
+    }
+
+    .partner-item {
+        height: 100px;
+        padding: 25px;
+    }
+
+    .software-suite {
+        padding: 40px 0;
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .blog-page {
+
+        .entry-title-heading {
+            padding-bottom: 40px;
+        }
+    }
+    
+    .featured-posts {
+        padding-bottom: 40px;
+    }
+
+    .featured-post {
+
+        &.big {
+            display: block;
+            padding-top: 30px;
+
+            .text {
+                -ms-flex: 0 0 100%;
+                -webkit-box-flex: 0;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .media {
+                top: 0;
+                position: inherit;
+                -ms-flex: 0 0 100%;
+                -webkit-box-flex: 0;
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 15px;
+                @include transform(inherit);
+            }
+        }
+    }
+
+    .popularposts {
+        padding-bottom: 40px;
+    }
+
+    .popularpost {
+
+        .text {
+            padding: 20px 15px;
+
+            p {
+                line-height: 24px;
+            }
+        }
+    }
+
+    .blog-page {
+        padding: 40px 0;
+
+        .main-content {
+
+            .entry-footer {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .blog-post {
+        display: block !important;
+
+        .media {
+            max-width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px;
+            float: none !important;
+        }
+    }
+
+    .blog-details-page {
+        padding-bottom: 40px;
+    }
+
+    .sidebar {
+
+        .widget {
+
+            .popular-posts {
+
+                .popular-post {
+
+                    .media {
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    CONTACT STYLES
+    ***********************************/
+    .contact-page {
+        padding: 70px 0 50px;
+
+        .content {
+            margin-bottom: 30px;
+        }
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .call-action {
+        padding: 40px 0;
+
+        .content {
+            padding: 30px;
+        }
+    }
+
+    .footer {
+        padding: 40px 0;
+
+        .footer-logo {
+
+            a {
+
+                img {
+                    max-width: 120px;
+                }
+            }
+        }
+
+        .footer-menu {
+
+            ul {
+                margin-left: -10px;
+                margin-right: -10px;
+
+                li {
+                    padding-left: 10px;
+                    padding-right: 10px;
+
+                    a {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .social-media {
+            margin-bottom: 20px;
+        }
+    }
+
+    .mfp-strategic-planning {
+
+        .mfp-container {
+
+            .mfp-content {
+
+                .white-popup {
+
+                    .content {
+
+                        .title {
+                            font-size: 18px;
+                            line-height: 28px;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .strategic_planning_slider {
+        height: 280px;
+    }
+    
+}/* 575 */
+
+@media only screen and (max-width: 480px) {
+
+    h1, .h1 { font-size: 34px; line-height: 40px; }
+
+    p {
+        margin: 0 0 20px;
+    }
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {
+
+        .navbar {
+
+            .navbar-header {
+
+                .navbar-toggler {
+                    width: 65px;
+                    padding-left: 21px;
+                    padding-right: 21px;
+                }
+
+                .logo {
+                    padding: 3px 15px;
+                }
+            }
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    > li {
+
+                        &.social {
+                            padding: 19px 15px;
+
+                            .social-media {
+                                margin-left: -3px;
+                                margin-right: -3px;
+
+                                li {
+                                    padding-left: 3px;
+                                    padding-right: 3px;
+                                }
+                            }
+                        }
+
+                        &.header-search {
+
+                            .search-wrap {
+
+                                .search-toggle {
+                                    padding-left: 19px;
+                                    padding-right: 19px;
+                                }
+
+                                .search-box {
+
+                                    .search-input {
+                                        padding-top: 16px !important;
+                                        padding-bottom: 16px !important;
+                                        padding-right: 65px !important;
+                                    }
+
+                                    .search-submit {
+                                        padding: 18px 19px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    SOLUTIONS STYLES
+    ***********************************/
+    .solutions-page {
+        padding: 50px 0 40px;
+    }
+
+    .solutions-video-page {
+        padding-top: 50px;
+    }
+
+    .solutions-group-item {
+        padding-bottom: 35px;
+        margin-bottom: 35px;
+    }
+
+    .solution-service-item {
+        min-height: 320px;
+
+        .text {
+            padding: 20px 15px;
+        }
+    }
+
+    .solutions-details-page {
+        padding-top: 50px;
+
+        .col-6 {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .minus {
+            margin-bottom: -20px;
+        }
+    }
+
+    .solution-feature {
+        margin-bottom: 20px;
+    }
+
+    /***********************************
+    ABOUT STYLES
+    ***********************************/
+    .about-page {
+        padding-top: 50px;
+
+        .entry-title {
+
+            .btn {
+                border-width: 20px;
+            }
+        }
+    }
+
+    .leadership-team {
+
+        .col-6 {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+
+    .partners-introduction {
+
+        .entry-title {
+            margin-bottom: 20px;
+        }
+
+        .col-6 {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+
+    .partner-item {
+        height: 120px;
+    }
+
+    /***********************************
+    CONTACT STYLES
+    ***********************************/
+    .contact-page {
+        padding: 60px 0 40px;
+    }
+    
+}/* 480 */
+
+@media only screen and (max-width: 380px) {
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {
+
+        .navbar {
+
+            .navbar-header {
+
+                .navbar-toggle {
+                    padding-left: 18px;
+                    padding-right: 18px;
+                }
+
+                .logo {
+                    padding: 3px 10px;
+                }
+            }
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    > li {
+
+                        &.social {
+                            padding: 19px 10px;
+
+                            .social-media {
+                                margin-left: -2px;
+                                margin-right: -2px;
+
+                                li {
+                                    padding-left: 2px;
+                                    padding-right: 2px;
+                                }
+                            }
+                        }
+
+                        &.header-search {
+
+                            .search-wrap {
+
+                                .search-toggle {
+                                    padding-left: 15px;
+                                    padding-right: 15px;
+                                }
+
+                                .search-box {
+
+                                    .search-input {
+                                        padding-right: 60px !important;
+                                    }
+
+                                    .search-submit {
+                                        padding: 18px 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    SOLUTIONS STYLES
+    ***********************************/
+    .solutions-page {
+        padding-top: 40px;
+    }
+
+    /***********************************
+    CONTACT STYLES
+    ***********************************/
+    .contact-page {
+        padding-top: 50px;
+    }
+    
+}/* 380 */

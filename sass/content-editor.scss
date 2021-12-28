@@ -1,0 +1,442 @@
+/*
+Theme Name: MWRA Content Editor Style
+Author: 
+Author URI: 
+Version: 1.0.0
+Text Domain: mwra
+*/
+
+@import "bootstrap";
+
+/***********************************
+BASE STYLES
+***********************************/
+
+// COLORS
+$white:#FFF;
+$black:#000;
+$red: #8E0D06;
+$base: #2D2E73;
+$primary: #0E92D9;
+
+$secondary: #34EAAE;
+
+@font-face {
+    font-family: 'AvenirBook';
+    src: url('../fonts/AvenirBook.eot');
+    src: local('Avenir-Book'), local('AvenirBook'),
+        url('../fonts/AvenirBook.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirBook.woff2') format('woff2'),
+        url('../fonts/AvenirBook.woff') format('woff'),
+        url('../fonts/AvenirBook.ttf') format('truetype'),
+        url('../fonts/AvenirBook.svg#AvenirBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvenirBookOblique';
+    src: url('../fonts/AvenirBookOblique.eot');
+    src: local('Avenir Book Oblique'), local('AvenirBookOblique'),
+        url('../fonts/AvenirBookOblique.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirBookOblique.woff2') format('woff2'),
+        url('../fonts/AvenirBookOblique.woff') format('woff'),
+        url('../fonts/AvenirBookOblique.ttf') format('truetype'),
+        url('../fonts/AvenirBookOblique.svg#AvenirBookOblique') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvenirMedium';
+    src: url('../fonts/AvenirMedium.eot');
+    src: local('Avenir-Medium'), local('AvenirMedium'),
+        url('../fonts/AvenirMedium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirMedium.woff2') format('woff2'),
+        url('../fonts/AvenirMedium.woff') format('woff'),
+        url('../fonts/AvenirMedium.ttf') format('truetype'),
+        url('../fonts/AvenirMedium.svg#AvenirMedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvenirBlack';
+    src: url('../fonts/AvenirBlack.eot');
+    src: local('Avenir-Black'), local('AvenirBlack'),
+        url('../fonts/AvenirBlack.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirBlack.woff2') format('woff2'),
+        url('../fonts/AvenirBlack.woff') format('woff'),
+        url('../fonts/AvenirBlack.ttf') format('truetype'),
+        url('../fonts/AvenirBlack.svg#AvenirBlack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvenirHeavy';
+    src: url('../fonts/AvenirHeavy.eot');
+    src: local('Avenir-Heavy'), local('AvenirHeavy'),
+        url('../fonts/AvenirHeavy.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirHeavy.woff2') format('woff2'),
+        url('../fonts/AvenirHeavy.woff') format('woff'),
+        url('../fonts/AvenirHeavy.ttf') format('truetype'),
+        url('../fonts/AvenirHeavy.svg#AvenirHeavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+// FONTS 
+$ave: "AvenirBook", sans-serif; // 400 - normal
+$aveo: "AvenirBookOblique", sans-serif; // 400 - italic
+$avem: "AvenirMedium", sans-serif; // 500 - normal
+$aveb: "AvenirBlack", sans-serif; // 900 - normal
+$aveh: "AvenirHeavy", sans-serif; // 900 - normal
+
+// MIXIN
+@import 'mixin';
+
+*:not(ul):not(ol) {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body, div, span, img, a, p, h1, h2, h3, 
+h4, h5, h6, option, legend, label, 
+table, th, td, tr, article, aside, 
+caption, figure, footer, header, hgroup, 
+mark, nav, section, time, audio, video {
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+ul, ol {
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	color: $black;
+	background: $white;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	font: 400 18px/28px $ave;
+}
+
+h1, .h1 { font-size: 60px; line-height: 74px; }
+h2, .h2 { font-size: 48px; line-height: 62px; }
+h3, .h3 { font-size: 36px; line-height: 48px; }
+h4, .h4 { font-size: 30px; line-height: 42px; }
+h5, .h5 { font-size: 24px; line-height: 32px; }
+h6, .h6 { font-size: 18px; line-height: 30px; }
+
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-weight: 400;
+	font-family: $ave;
+}
+
+a, button {
+
+	&:hover, &:focus {
+		outline: 0;
+		text-decoration: none;
+	}
+}
+
+p {
+	margin: 0 0 30px;
+}
+
+hr {
+	margin: 0;
+	padding: 0;
+	border-color: $black;
+
+	&.two {
+		border-width: 2px;
+	}
+}
+
+section {
+	padding: 50px 0;
+}
+
+input[type="text"]:not(.select2-input),
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="password"],
+input[type="file"],
+select, textarea {
+	width: 100% !important;
+	color: $base !important;
+	font-size: 18px !important;
+	font-weight: 400 !important;
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	line-height: 28px !important;
+	padding: 10px 15px !important;
+	background: #F5F9FD !important;
+	border: 1px solid #DCE3EB !important;
+	@include appearance;
+	@include transition(all 0.3s ease);
+	-webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+	@include placeholder($base, 18px, 400);
+
+	&:hover, &:focus {
+		outline: 0;
+	}
+}
+
+.btn {
+	border: 0;
+	outline: 0;
+	color: $white;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	box-shadow: none;
+	background: $base;
+	border-radius: 500px;
+	padding: 16px 26px 13px;
+	@include letter-spacing(50, 14);
+	@include transition(all 0.3s ease);
+
+	&.white {
+		color: $white;
+		background: $white;
+	}
+
+	&.black {
+		color: $white;
+		background: $black;
+	}
+
+	&.primary {
+		color: $white;
+		background: $primary;
+
+		&:hover, &:focus, &:active {
+			color: $white;
+			background: $black;
+		}
+	}
+
+	&:hover, &:focus, &:active {
+		outline: 0;
+		color: $white;
+		box-shadow: none;
+		background: $primary;
+	}
+}
+
+.entry-title {
+
+	.sub-title {
+		display: block;
+	}
+
+	.title {
+		color: $black;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	&.white-desc {
+
+		p {
+			color: $white
+		}
+	}
+
+	.white {
+		color: $white;
+	}
+
+	.base {
+		color: $base;
+	}
+
+	.primary {
+		color: $primary;
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: 1180px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.container-fluid {
+	padding-left: 50px;
+	padding-right: 50px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.lr-10 {
+	margin-left: -10px;
+	margin-right: -10px;
+
+	>[class*="col"] {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+@import 'mix';
+
+.list-inline {
+	margin-left: -5px;
+	margin-right: -5px;
+
+	li {
+		padding-left: 5px;
+		padding-right: 5px;
+		display: inline-block;
+	}
+}
+
+.blankSpace {
+    top: -70px !important;
+    display: block !important;
+    position: relative !important;
+    visibility: hidden !important;
+}
+
+.fluid {
+	max-width: 100% !important;
+
+	br {
+		display: none;
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6, p, 
+	.entry-title, .description, .block-content {
+		max-width: 100% !important;
+	}
+}
+
+.content-area {
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tooltip {
+
+	.arrow {
+		width: 13.5px;
+		height: 13.5px;
+
+		&:before {
+			border: 0;
+			width: 100%;
+			height: 100%;
+			background: $white;
+			border-right: 1px solid #60BCC4;
+			border-bottom: 1px solid #60BCC4;
+			@include transform(rotate(45deg));
+		}
+	}
+
+	.tooltip-inner {
+		color: $black;
+		font-size: 16px;
+		font-weight: 400;
+		text-align: left;
+		max-width: 240px;
+		line-height: 21px;
+		background: $white;
+		padding: 5px 10px 6px;
+		border: 1px solid #60BCC4;
+	}
+
+	&.bs-tooltip-bottom {
+
+		.arrow {
+
+			&:before {
+				border: 0;
+				width: 100%;
+				height: 100%;
+				background: $white;
+				border-left: 1px solid #60BCC4;
+				border-top: 1px solid #60BCC4;
+				@include transform(rotate(45deg));
+			}
+		}
+	}
+
+	&.show {
+		opacity: 1;
+	}
+}
+
+.page-header {
+	top: 0;
+	z-index: -1;
+	width: 100%;
+	height: 700px;
+	overflow: hidden;
+	position: absolute;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: grayscale(100%);
+	}
+
+	&:before {
+		left: 0;
+		bottom: 0;
+		z-index: 1;
+		width: 100%;
+		content: "";
+		height: 100%;
+		position: absolute;
+		background: linear-gradient(rgba(255, 255, 255, 0.71) 0%, #fff 100%);
+	}
+
+	&.blog {
+		height: 900px;
+
+		&:before {
+			height: 420px;
+			background: linear-gradient(rgba(255, 255, 255, 0) 0%, #fff 100%);
+		}
+	}
+}
+
+@import "default_template";
