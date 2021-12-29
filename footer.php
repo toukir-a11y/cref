@@ -11,20 +11,39 @@
 			<div class="row lr-10">
 				<div class="col-lg-3">
 					<div class="footer-logo">
-						<a href="index.html">
-							<img src="../images/footer-logo.png" class="img-fluid" alt="">
+						<a href="<?php echo esc_url( home_url( '/' ) );?>">
+
+						<?php
+
+							$footer_logo = get_field( 'footer_logo', 'options' );
+
+							if( $footer_logo )
+							{
+							printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $footer_logo['url'] ), $footer_logo['alt']  );
+							}
+							else
+							{
+							printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( get_theme_file_uri( '/images/footer-logo.png' ) ), get_bloginfo( 'name') );
+							}
+						?>
+							
 						</a>
 					</div>
 				</div>
 
 				<div class="col-lg-8">
 					<div class="footer-menu">
-						<ul class="list-inline">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Integrated Services</a></li>
-							<li><a href="#">About CREF</a></li>
-							<li><a href="#">Contact Us</a></li>
-						</ul>
+					<?php
+                        wp_nav_menu(array(
+                            'theme_location'     => 'footer-menu',
+                            'depth'              => 2,
+                            'container'          => false,
+                            'menu_class'         => 'list-inline',
+                            'menu_id'            => '',
+                            'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                            'walker'             => new wp_bootstrap_navwalker()
+                        ));
+                    ?>
 					</div>
 
 					<div class="row lr-10">
@@ -81,19 +100,32 @@
 
 			<div class="copyright-wrapper">	
 				<div class="row lr-10 align-items-center">
+				<?php $social = get_field( 'social_media', 'options' );  if ( !empty($social) ):?>
 					<div class="offset-lg-3 col-lg-4 col-sm-6">
 						<ul class="social-media list-inline">
-						  	<li><a href="#" class="icon-twitter" target="_blank"></a></li>
-						  	<li><a href="#" class="icon-linkedin" target="_blank"></a></li>
-						  	<li><a href="#" class="icon-rss" target="_blank"></a></li>
+							<?php 								
+								foreach ( $social as $social_media )
+								
+								{
+									printf( '<li><a href="%s" class="%s" target="_blank"></a></li>', esc_url( $social_media['url'] ), $social_media['icon'] );
+								}																
+							?>
 						</ul>
 					</div>
+					<?php endif;?>
 
+				<?php $copyright = get_field( 'copyright', 'options' ); if( !empty ($copyright) ):?>
 					<div class="col-lg-5 col-sm-6">
 						<div class="copyright">
-							<p>Copyright &copy;2021 CREF™. All Rights Reserved Copyright</p>
+							<?php 
+								if ( $copyright )
+								{
+									printf( '%s', $copyright );
+								}
+							?>
 						</div>
 					</div>
+				<?php endif;?>
 				</div>
 			</div>
 		</div>

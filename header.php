@@ -3,9 +3,11 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php wp_head();?>
 </head>
-<body>
+<body  <?php body_class(); ?>>
 	<div id="sidr">
         <div class="navbar-header d-flex align-items-center">
     		<a href="#sidr" class="navbar-toggler">
@@ -15,34 +17,69 @@
     	  	</a>
 
         	<div class="logo">
-        	 	<a class="navbar-brand" href="index.html">
-        	 		<img src="../images/logo.png" class="img-fluid" alt="">
+        	 	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+					 <?php
+
+					 	$logo = get_field( 'logo', 'options' );
+
+						 if( $logo )
+						 {
+							printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $logo['url'] ), $logo['alt']  );
+						 }
+						 else
+						 {
+							printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( get_theme_file_uri( '/images/logo.png' ) ), get_bloginfo( 'name') );
+						 }
+					 ?>
+        	 		
         	 	</a>
         	</div>
         </div>
 
         <div class="navigation">
             <ul class="nav navbar-nav">
-              	<li><a href="#">About</a></li>
-              	<li><a href="#">News & Insights</a></li>
-              	<li><a href="#">Careers</a></li>
-              	<li><a href="#">Contact Us</a></li>
-              	<li class="dropdown">
-              		<a href="about.html">Solutions</a>
-
-              		<ul class="dropdown-menu">
-              			<li><a href="#">Capital Program Management</a></li>
-              			<li><a href="#">Facilities Performance Services</a></li>
-              			<li><a href="#">Real Estate Services</a></li>
-              			<li><a href="#">Engineering & Energy</a></li>
-              			<li><a href="#">CREF International</a></li>
-              		</ul>
+					<?php
+                        wp_nav_menu(array(
+                            'theme_location'     => 'primary-menu',
+                            'depth'              => 2,
+                            'container'          => false,
+                            'menu_class'         => 'nav navbar-nav',
+                            'menu_id'            => '',
+                            'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                            'walker'             => new wp_bootstrap_navwalker()
+                        ));
+                    ?>
               	</li>
             </ul>
         </div>
 
         <div class="navbar-footer">
-        	<a href="#" class="btn text-uppercase">View icref suite</a>
+
+			<?php $btn = get_field('button', 'options'); if( $btn ):?>
+					
+				<a href="<?php
+										
+							if( $btn['type']  == 'internal' && !empty($btn['internal_url'] ))
+							{
+							printf( '%s', $btn['internal_url'] );
+							}
+							if( $btn['type'] == 'external' && !empty($btn['external_url'] ))
+							{
+								printf( '%s', $btn['external_url'] );
+							}
+
+						 ?>" class="btn text-uppercase">
+					
+						<?php 
+                                             
+							if( !empty($btn['text'] ))
+							{
+								printf( '%s',$btn['text'] );
+							}
+                        ?>
+				</a>
+
+			<?php endif;?>	
         </div>
 	</div><!-- /mobile-header -->
 
@@ -57,33 +94,61 @@
 					</div>
 
 					<div class="logo">
-					 	<a class="navbar-brand" href="index.html">
-					 		<img src="../images/logo.png" class="img-fluid" alt="">
+					 	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+						 <?php
+							$logo = get_field( 'logo', 'options' );
+
+							if( $logo )
+							{
+								printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $logo['url'] ), $logo['alt']  );
+							}
+							else
+							{
+								printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( get_theme_file_uri( '/images/logo.png' ) ), get_bloginfo( 'name') );
+							}
+					 	?>
 					 	</a>
 					</div>
 				</div>
 		
 				<div class="collapse navbar-collapse">
 				  	<ul class="nav navbar-nav">
-				    	<li><a href="#">About Us</a></li>
-				    	<li><a href="#">Solutions</a></li>
-				    	<li><a href="#">Contact Us</a></li>
-				  	</ul>
+						<?php
 
+							wp_nav_menu(array(
+								'theme_location'     => 'top-menu',
+								'depth'              => 2,
+								'container'          => false,
+								'menu_class'         => 'nav navbar-nav',
+								'menu_id'            => '',
+								'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+								'walker'             => new wp_bootstrap_navwalker()
+							));
+						?>
+				  	</ul>
+				
 				  	<ul class="navbar-nav navbar-nav-right">
+					 <?php $social = get_field( 'social_media', 'options' );  if ( $social ):?>
 				  	  	<li class="social">
 				  	  		<ul class="social-media list-inline">
-				  	  			<li><a href="#" class="icon-twitter" target="_blank"></a></li>
-				  	  			<li><a href="#" class="icon-linkedin" target="_blank"></a></li>
-				  	  			<li><a href="#" class="icon-rss" target="_blank"></a></li>
+								<?php 
+								
+								foreach ( $social as $social_media )
+								
+								{
+									printf( '<li><a href="%s" class="%s" target="_blank"></a></li>', esc_url( $social_media['url'] ), $social_media['icon'] );
+								}
+																
+								?>				  	  			
 				  	  		</ul>
 				  	  	</li>
+					 <?php endif; ?>
 				  	  	<li class="header-search">
 				  	  		<div class="search-wrap">
 				  	  			<a class="search-toggle" data-selector=".search-wrap">
 				  	  				<i class="icon-search"></i>
 				  	  			</a>
-
+								
 				  	  			<form action="" method="get" class="search-box">
 				  	  				<input type="search" name="s" class="search-input" id="search"
 				  	  					placeholder="Search CREF">
@@ -91,8 +156,10 @@
 				  	  			</form>
 				  	  		</div>
 				  	  	</li>
-				  	</ul>
+				  	</ul>	
 				</div><!-- /collapse -->
 		  	</div><!-- /container-fluid -->
 		</div><!--/ Navbar -->
 	</header>
+
+	

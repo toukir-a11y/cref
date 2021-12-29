@@ -335,19 +335,6 @@
 
 	</div><!-- /content-area -->
 
-	<section class="call-action">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="content" style="background-image: url(<?php echo get_template_directory_uri();?>/images//call-action.jpg)">
-						<span class="sub-title">Contact Us</span>
-						<h3 class="title">Start the Conversation</h3>
-						<p>Reach out anytime. We look forward to hearing from you.</p>
-						<a href="#" class="btn text-uppercase">Contact Us</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section><!-- /call-action -->
+	<?php get_template_part('template_parts/call_action');?>
 
 <?php get_footer();?>
