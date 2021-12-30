@@ -1,4 +1,4 @@
 <?php
  /* 
- Template Name: about
+ Template Name: About
  */ ?>

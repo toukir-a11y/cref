@@ -29,11 +29,11 @@
 										
 										if( $btn['type']  == 'internal' && !empty($btn['internal_url'] ))
 										{
-										printf( '%s', $btn['internal_url'] );
+										printf( '%s', esc_url($btn['internal_url']) );
 										}
 										if( $btn['type'] == 'external' && !empty($btn['external_url'] ))
 										{
-											printf( '%s', $btn['external_url'] );
+											printf( '%s', esc_url($btn['external_url']) );
 										}
 			
 								  	?>"

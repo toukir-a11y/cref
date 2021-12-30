@@ -36,7 +36,7 @@
         	</div>
         </div>
 
-        <div class="navigation">
+        <div class="navigation mobile-nav">
             <ul class="nav navbar-nav">
 					<?php
                         wp_nav_menu(array(
@@ -61,11 +61,11 @@
 										
 							if( $btn['type']  == 'internal' && !empty($btn['internal_url'] ))
 							{
-							printf( '%s', $btn['internal_url'] );
+							printf( '%s', esc_url($btn['internal_url']) );
 							}
 							if( $btn['type'] == 'external' && !empty($btn['external_url'] ))
 							{
-								printf( '%s', $btn['external_url'] );
+								printf( '%s', esc_url($btn['external_url']) );
 							}
 
 						 ?>" class="btn text-uppercase">

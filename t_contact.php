@@ -1,4 +1,4 @@
 <?php
  /* 
- Template Name: contact
+ Template Name: Contact
  */ ?>

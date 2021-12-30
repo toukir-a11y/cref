@@ -45,56 +45,148 @@
                         ));
                     ?>
 					</div>
-
-					<div class="row lr-10">
+				<?php $widgets = get_field( 'widgets', 'options' );  if( $widgets ): ?>
+					<div class="row lr-10">	
+						<?php $left_one = $widgets['left_widgets_one']; if ( $left_one ):?>		
 						<div class="col-sm-6">
 							<div class="footer-widget">
 								<ul class="footer-widget-menu list-unstyled">
-									<li class="title"><a href="#">Capital Program Management</a></li>
-									<li><a href="#">Capital Budget Planning
-									<li><a href="#">Staff Programming & Fit Planning</a></li>
-									<li><a href="#">Owners Project Management</a></li>
-									<li><a href="#">Funding Requisitioning & Allocation</a></li>
+
+									<?php foreach( $left_one as $one_left ):?>
+
+										<li>											
+											<a href="<?php
+											
+												if( $one_left['type']  == 'internal' && !empty($one_left['internal_url'] ))
+												{
+												printf( '%s', esc_url($one_left['internal_url']) );
+												}
+												if( $one_left['type'] == 'external' && !empty($one_left['external_url'] ))
+												{
+													printf( '%s', esc_url($one_left['external_url']) );
+												}
+												
+												?>">
+												
+												<?php 
+																
+												if( !empty($one_left['text'] ))
+												{
+													printf( '%s',$one_left['text'] );
+												}
+												?>
+											</a>
+										</li>									
+									<?php endforeach;?>																																												
 								</ul>
 							</div>
 						</div>
+						<?php endif;?>
 
+						<?php $right_one = $widgets['Right_widgets_one']; if ( $right_one ):?>
 						<div class="col-sm-6">
 							<div class="footer-widget">
 								<ul class="footer-widget-menu list-unstyled">
-									<li class="title"><a href="#">Real Estate Services</a></li>
-									<li><a href="#">Development/ Acquisitions/ Disposition</a></li>
-									<li><a href="#">Property Management</a></li>
-									<li><a href="#">Lease Administration</a></li>
-									<li><a href="#">Tenant Coordination</a></li>
-								</ul>
+									<?php foreach( $right_one as $one_right ):?>	
+										<li>											
+											<a href="<?php
+											
+												if( $one_right['type']  == 'internal' && !empty($one_right['internal_url'] ))
+												{
+												printf( '%s', esc_url($one_right['internal_url']) );
+												}
+												if( $one_right['type'] == 'external' && !empty($one_right['external_url'] ))
+												{
+													printf( '%s', esc_url($one_right['external_url']) );
+												}
+												
+												?>">
+												
+												<?php 
+																
+												if( !empty($one_right['text'] ))
+												{
+													printf( '%s',$one_right['text'] );
+												}
+												?>
+											</a>
+										</li>		
+									<?php endforeach; ?>
+								</ul>												
 							</div>
 						</div>
-
+						<?php endif;?>
+						
+					<?php $left_two = $widgets['left_widgets_two']; if ( $left_two ):?>
 						<div class="col-sm-6">
 							<div class="footer-widget">
 								<ul class="footer-widget-menu list-unstyled">
-									<li class="title"><a href="#">Green Seal</a></li>
-									<li><a href="#">Environmental Engineering</a></li>
-									<li><a href="#">Civil Engineering</a></li>
-									<li><a href="#">Land Surveying</a></li>
-									<li><a href="#">3D Laser Scanning</a></li>
-									<li><a href="#">Energy</a></li>
+									<?php foreach ( $left_two as $left ): ?>
+										<li>											
+											<a href="<?php
+											
+												if( $left['type']  == 'internal' && !empty($left['internal_url'] ))
+												{
+												printf( '%s', esc_url($left['internal_url']) );
+												}
+												if( $left['type'] == 'external' && !empty($left['external_url'] ))
+												{
+													printf( '%s', esc_url($left['external_url']) );
+												}
+												
+												?>">
+												
+												<?php 
+																
+												if( !empty($left['text'] ))
+												{
+													printf( '%s',$left['text'] );
+												}
+												?>
+											</a>
+										</li>	
+									<?php endforeach; ?>	
 								</ul>
 							</div>
 						</div>
+					<?php endif;?>	
 
+					<?php $right_two = $widgets['Right_widgets_two']; if ( $right_two ):?>							
 						<div class="col-sm-6">
 							<div class="footer-widget">
 								<ul class="footer-widget-menu list-unstyled">
-									<li class="title"><a href="#">Facilities Performance Services</a></li>
-									<li><a href="#">Regulatory Preparedness</a></li>
-									<li><a href="#">Organizational Integration</a></li>
-									<li><a href="#">Facilities Management</a></li>
+									<?php foreach ( $right_two as $right ): ?>
+										<li>											
+											<a href="<?php
+											
+												if( $right['type']  == 'internal' && !empty($right['internal_url'] ))
+												{
+												printf( '%s', esc_url($right['internal_url']) );
+												}
+												if( $right['type'] == 'external' && !empty($right['external_url'] ))
+												{
+													printf( '%s', esc_url($right['external_url']) );
+												}
+												
+												?>">
+												
+												<?php 
+																
+												if( !empty($right['text'] ))
+												{
+													printf( '%s',$right['text'] );
+												}
+												?>
+											</a>
+										</li>	
+
+									<?php endforeach; ?>
 								</ul>
 							</div>
 						</div>
+						<?php endif; ?>
 					</div>
+					<?php endif;?>				
 				</div>
 			</div>
 
@@ -117,7 +209,8 @@
 				<?php $copyright = get_field( 'copyright', 'options' ); if( !empty ($copyright) ):?>
 					<div class="col-lg-5 col-sm-6">
 						<div class="copyright">
-							<?php 
+							<?php
+							 
 								if ( $copyright )
 								{
 									printf( '%s', $copyright );
