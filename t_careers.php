@@ -75,7 +75,7 @@
         
         <?php $positon = get_field( 'open_position' ); $btn = $positon['button']; if ( !empty($positon) ):?>
 		<section class="open-positions">
-            <?php if( $positon['tite'] || $positon['content'] || $btn ):?>
+            <?php if( $positon['title'] || $positon['content'] || $btn ):?>
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -356,8 +356,10 @@
 
 
 <?php 
-get_template_part( 'template_parts/call_action');
-get_footer(); 
+
+	get_template_part( 'template_parts/call_action');
+	
+	get_footer(); 
 ?>
 
 
