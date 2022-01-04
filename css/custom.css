@@ -1,0 +1,8 @@
+input#gform_submit_button_1 {
+    background: #2D2E73;
+    border-radius: 30px;
+    padding: 0px;
+    height: 55px;
+    width: 200px;
+    color: white;
+}

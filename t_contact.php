@@ -18,6 +18,10 @@
         {
             printf( '<div class="page-header"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url($image['url']), 'alt' );
         }
+        else
+        {
+            printf( '<div class="page-header"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url( get_theme_file_uri( '/images/page-header-contact.jpg' ) ),'alt' );
+        }
     ?>
 
 		<section class="breadcrumb-wrapper">
@@ -97,15 +101,24 @@
                             <?php endif; ?>    
                             </div>
                         </div>
-                    <?php endif; ?>    
+                    <?php endif; ?>   
+                    
+                    <?php if( !empty($contact['form_title']) ):?>
 
 					<div class="col-lg-6">
 						<div class="contact-form">
-							<h4 class="form-title">Send us a Message</h4>
+                            <?php 
+                                if( $contact['form_title'] )
+                                {
+                                    printf( '<h4 class="form-title">%s</h4>', $contact['form_title'] );
 
-							<img src="../images/form.png" class="img-fluid w-100" alt="">
+                                    echo do_shortcode('[gravityform id="1" title="false" description="false" tabindex="10" ajax="true"]');
+                                }
+                            ?>
 						</div>
 					</div>
+
+                    <?php endif; ?>
 				</div>
 			</div>
 		</section><!-- /contact-page -->
