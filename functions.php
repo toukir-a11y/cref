@@ -68,6 +68,39 @@ function sidebar(){
 }
 add_action("widgets_init","sidebar");
 
+
+
+
+/*** add SVG to allowed file uploads */
+function rfl_custom_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+    $mimes['doc'] = 'application/msword';
+    return $mimes;
+}
+add_filter('upload_mimes', 'rfl_custom_mime_types');
+add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes) {
+    global $wp_version;
+    $filetype = wp_check_filetype($filename, $mimes);
+    return [
+        'ext'             => $filetype['ext'],
+        'type'            => $filetype['type'],
+        'proper_filename' => $data['proper_filename']
+    ];
+}, 10, 4);
+function fix_svg()
+{
+    echo '<style type="text/css">
+          .attachment-266x266, .thumbnail img {
+               width: 100% !important;
+               height: auto !important;
+          }
+          </style>';
+}
+add_action('admin_head', 'fix_svg');
+
+
 // function blog_bg_image (){
 
 // if(is_home()){

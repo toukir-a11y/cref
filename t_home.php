@@ -1,43 +1,89 @@
 <?php
- /* 
- Template Name: Home  */ 
+ /* Template Name: Home  */ 
  
  get_header();
 
  ?>
 
-	<section class="banner d-flex flex-wrap align-items-end" style="background-image: url(.<?php get_template_directory_uri();?>/images/banner.jpg)">
+<?php  $banner = get_field( 'banner' ); $cta = $banner['cta']; $btn = $cta['button']; if( !empty($banner) ):?>
+	<section class="banner d-flex flex-wrap align-items-end" <?php if ( $banner['bg_image'] ) echo 'style="background-image: url('.esc_url( $banner['bg_image']['url'] ).');"'; ?>>
 		<div class="background rellax" data-rellax-speed="-5" data-rellax-percentage="0.5">
-			<img src="<?php get_template_directory_uri();?>/images/banner.jpg" class="img-fluid" alt="">
+			<?php
+				if( $banner['bg_image'] )
+				{
+					printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url($banner['bg_image']['url']), 'alt' );
+				}
+			?>
 		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="content">
-						<h1 class="title h2">The Undisputed <br>Leader in Health Care Real Estate Asset Management</h1>
-						<p class="sub-title h5">CREF manages all aspects of your real estate and facilities, empowering you to focus on what matters.</p>
+			<?php if( $banner['title'] || $banner['title'] ):?>	
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="content">
+								<?php
+									if( $banner['title'] )
+									{
+										printf( '<h1 class="title h2">The Undisputed <br>%s</h1>', $banner['title'] );
+									}
+									if( $banner['sub_title'] )
+									{
+										printf( '<p class="sub-title h5">%s</p>', $banner['sub_title'] );
+									}	
+								?>						
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			<?php endif; ?>	
 
 		<div class="banner-call-action d-flex align-items-end">
 			<button class="scrollDown" data-space="0"><i class="icon-arrow-down-alt rellax" data-rellax-speed="-0.3" data-rellax-percentage="0.1"></i></button>
-
-			<div class="cta" style="background-image: url(<?php get_template_directory_uri();?>/images/banner-call-action.jpg)">
+		<?php if( $cta || $btn ): ?>
+			<div class="cta" <?php if ( $cta['cta_image'] ) echo 'style="background-image: url('.esc_url( $cta['cta_image']['url'] ).');"'; ?>>
 				<div class="text">
-					<span class="sub-title">The Latest</span>
-					<h3 class="title">Important Item Goes Here</h3>
-					<a href="#" class="btn text-uppercase">Contact Us</a>
+					<?php
+						if( $cta['sub_title'] )
+						{
+							printf( '<span class="sub-title">%s</span>', $cta['sub_title'] );
+						}
+						if( $cta['title'] )
+						{
+							printf( '<h3 class="title">%s</h3>', $cta['title'] );
+						}				
+					?>
+										
+					<a href="<?php
+										
+							if( $btn['type']  == 'internal' && !empty($btn['internal_url'] ))
+							{
+							printf( '%s', esc_url($btn['internal_url']) );
+							}
+							if( $btn['type'] == 'external' && !empty($btn['external_url'] ))
+							{
+								printf( '%s', esc_url($btn['external_url']) );
+							}
+
+						?>" class="btn text-uppercase">
+						
+						<?php 
+															
+							if( !empty($btn['text'] ))
+							{
+								printf( '%s',$btn['text'] );
+							}
+						?>
+					</a>
 				</div>
 			</div>
+		<?php endif; ?>	
 		</div>
 		<span class="border"></span>
 	</section><!-- /banner -->
+<?php endif; ?>	
 
 	<div id="primary" class="content-area">
 
-		<section class="integrated-services pb-0">
+		<!-- <section class="integrated-services pb-0">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -136,209 +182,246 @@
 					</div>
 				</div>
 			</div>
-		</section><!-- /popular-posts -->
+		</section>/popular-posts -->
 
+	<?php $assets = get_field( 'assets' ); $image = get_field('image'); if( !empty($assets) ):?>
 		<section class="asset-management pb-md-0">
 			<div class="container">
 				<div class="row minus align-items-center">
-					<div class="col-lg-8 col-md-6">
-						<div class="media">
-							<img src="<?php get_template_directory_uri();?>/images/asset-management.svg" class="img-fluid" alt="">
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="row lr-10">
-							<div class="col-6">
-								<div class="asset-item">
-									<i class="icon-diamond"></i>
-									<h3 class="number">$<span class="counter">10</span></h3>
-									<span class="title text-uppercase">Billion</span>
-									<p>Asset Management</p>
-								</div>
-							</div>
-
-							<div class="col-6">
-								<div class="asset-item">
-									<i class="icon-computer"></i>
-									<h3 class="number">$<span class="counter">250</span></h3>
-									<span class="title text-uppercase">Million</span>
-									<p>In Assets Managed</p>
-								</div>
-							</div>
-
-							<div class="col-6">
-								<div class="asset-item">
-									<i class="icon-home"></i>
-									<h3 class="number">$<span class="counter">10</span></h3>
-									<span class="title text-uppercase">Billion</span>
-									<p>Asset Management</p>
-								</div>
-							</div>
-
-							<div class="col-6">
-								<div class="asset-item">
-									<i class="icon-cloud"></i>
-									<h3 class="number">$<span class="counter">250</span></h3>
-									<span class="title text-uppercase">Million</span>
-									<p>In Assets Managed</p>
-								</div>
+					<?php if( !empty($image) ):?>	
+						<div class="col-lg-8 col-md-6">
+							<div class="media">
+								<?php 
+									if( $image )
+									{
+										printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url($image['url']), 'alt' );
+									}
+								?>								
 							</div>
 						</div>
-					</div>
+					<?php endif; ?>	
+					<?php  if( !empty($assets) ): ?>
+						<div class="col-lg-4 col-md-6">
+							<div class="row lr-10">
+								<?php foreach( $assets as $asset ):?>	
+									<div class="col-6">
+										<div class="asset-item">
+											<?php 
+												if( $asset['icon'] )
+												{
+													printf( '<i class="%s"></i>', $asset['icon'] );
+												}
+												if( $asset['number'] )
+												{
+													printf( '<h3 class="number">$<span class="counter">%s</span></h3>', $asset['number'] );
+												}
+												if( $asset['title'] )
+												{
+													printf( '<span class="%s">Billion</span>', $asset['title'] );
+												}
+												if( $asset['content'] )
+												{
+													printf( '%s', $asset['content'] );
+												}					
+											?>											
+										</div>
+									</div>
+								<?php endforeach; ?>	
+							</div>
+						</div>
+					<?php endif; ?>	
 				</div>
 			</div>
 		</section><!-- /asset-management -->
+	<?php endif; ?>	
 
 		<div class="position-relative overflow-hidden">
-
+	<?php $software = get_field('software_suite'); $sbtn = $software['button']; if( !empty($software) ): ?>
 		<section class="home-icref-suite">
 			<div class="container">
 				<div class="row lr-10 align-items-center">
-					<div class="col-md-5">
-						<div class="entry-title">
-							<span class="sub-title">iCREF Integrated Data Platform</span>
-							<h3 class="title base">The iCREF Software Suite</h3>
-							<p>iCREF is a fully integrated asset management software suite that manages all aspects of your corporate facilities and property projects.</p>
-							<a href="#" class="btn text-uppercase">View icref suite</a>
+					<?php if( $software['sub_title'] || $software['title'] || $software['content'] || $sbtn ):?>
+						<div class="col-md-5">
+							<div class="entry-title">
+								<?php
+									if( $software['sub_title'] )
+									{
+										printf( '<span class="sub-title">%s</span>', $software['sub_title'] );
+									}
+									if( $software['title'] )
+									{
+										printf( '<h3 class="title base">%s</h3>', $software['title'] );
+									}
+									if( $software['content'] )
+									{
+										printf( '%s', $software['title'] );
+									}
+								?>
+							
+								<a href="<?php
+										
+										if( $btn['type']  == 'internal' && !empty($btn['internal_url'] ))
+										{
+										printf( '%s', esc_url($btn['internal_url']) );
+										}
+										if( $btn['type'] == 'external' && !empty($btn['external_url'] ))
+										{
+											printf( '%s', esc_url($btn['external_url']) );
+										}
+			
+									?>" class="btn text-uppercase">
+									<?php 
+															
+										if( !empty($btn['text'] ))
+										{
+											printf( '%s',$btn['text'] );
+										}
+									?>
+								</a>
+							</div>
 						</div>
-					</div>
-
-					<div class="col-md-7">
-						<div class="media">
-							<img src="<?php get_template_directory_uri();?>/images/home-icref-suite.svg" alt="">
+					<?php endif; ?>	
+					<?php if( !empty($software['image']) ):?>
+						<div class="col-md-7">
+							<div class="media">
+								<?php
+									if( $software['image'] )
+									{
+										printf( '<img src="%s" alt="%s">', esc_url($software['image']['url']), 'alt' );
+									}
+								?>								
+							</div>
 						</div>
-					</div>
+					<?php endif;?>
 				</div>
 			</div>
 		</section><!-- /home-icref-suite -->
-
+	<?php endif; ?>	
+	
+	<?php $about = get_field( 'about_cref' ); $video = $about['video']; $about_btn= $about['button']; if( !empty($about) ):?>
 		<section class="home-about">
-			<div class="background">
-				<img src="<?php get_template_directory_uri();?>/images/home-about.svg" class="img-fluid" alt="">
-			</div>	
+			<?php if( !empty($about['image']) )
+			{
+				printf( '<div class="background"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url( $about['image']['url']), 'alt'  );
+			}				
+			?>
+							
 			<div class="container">
 				<div class="row flex-md-row-reverse align-items-center">
-					<div class="col-md-4">
-						<div class="entry-title">
-							<span class="sub-title">About CREF</span>
-							<h3 class="title">We specialize in all aspects of real estate</h3>
-							<p>CREF was formed with one single objective - to help institutions more efficiently and productively manage their real estate assets</p>
-							<a href="#" class="btn white text-uppercase">Our Mission & Values</a>
+					<?php if( $about['sub_title'] || $about['title'] || $about['content'] || $about_btn ):?>	
+						<div class="col-md-4">
+							<div class="entry-title">
+								<?php
+									
+									if( $about['sub_title'] )
+									{
+										printf( '<span class="sub-title">%s</span>', $about['sub_title'] );
+									}
+									if( $about['title'] )
+									{
+										printf( '<h3 class="title">%s</h3>', $about['title'] );
+									}
+									if( $about['content'] )
+									{
+										printf( '%s', $about['content'] );
+									}
+								?>
+								
+								<a href="<?php
+									
+										if( $about_btn['type']  == 'internal' && !empty($about_btn['internal_url'] ))
+										{
+										printf( '%s', esc_url($about_btn['internal_url']) );
+										}
+										if( $about_btn['type'] == 'external' && !empty($btn['external_url'] ))
+										{
+											printf( '%s', esc_url($about_btn['external_url']) );
+										}
+			
+									?>" class="btn white text-uppercase">
+									<?php 
+														
+										if( !empty($about_btn['text'] ))
+										{
+											printf( '%s',$about_btn['text'] );
+										}
+									?>
+								</a>
+							</div>
 						</div>
-					</div>
+					<?php endif; ?>	
 
-					<div class="col-md-8">
-						<a href="https://www.youtube.com/watch?v=QUCFquGq3CE" class="popup-video" data-effect="mfp-move-from-top">
-							<div class="media">
-								<img src="<?php get_template_directory_uri();?>/images/home-about.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text">
-								<h4 class="title">Title of Video</h4>
-								<p>A little description about what the video is</p>
-							</div>
-						</a>
-					</div>
-				</div>
+					<?php if(!empty($video) ) : ?>
+						<div class="col-md-8">
+							<a href="<?php echo esc_url($video['url']);?>" class="popup-video" data-effect="mfp-move-from-top">
+								<?php
+									if( $about['image'] )
+									{
+										printf( '<div class="media"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url($video['image']['url']), 'alt' );
+									}
+									if( $video['title'] || $video['content'] )
+									{
+										printf( '<div class="text"><h4 class="title">%s</h4>%s', $video['title'], $video['content'] );
+									}
+								?>	
+								</div>
+							</a>					
+						</div>
+					<?php endif; ?>	
+				</div>		
 			</div>
 		</section><!-- /home-about -->
+	<?php endif; ?>	
 
 		</div><!-- /position-relative -->
-
+	<?php $featured = get_field('featured_stories'); $stories = $featured['stories_item']; if( !empty($featured) ):?>
 		<section class="featured-stories">
 			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="entry-title text-center">
-							<span class="sub-title">Featured Stories</span>
-							<h3 class="title">Customer Success Stories</h3>
-							<p>Explore our latest customer success stories.</p>
+				<?php if( $featured['sub_title'] || $featured['title'] || $featured['content']):?>
+					<div class="row">
+						<div class="col-12">
+							<div class="entry-title text-center">
+								<?php
+									if( $featured['sub_title'] )
+									{
+										printf( '<span class="sub-title">%s</span>', $featured['sub_title'] );
+									}
+									if( $featured['title'] )
+									{
+										printf( '<h3 class="title">%s</h3>', $featured['title'] );
+									}
+									if( $featured['content'] )
+									{
+										printf( '%s', $featured['content'] );
+									}								
+								?>
+							</div>
 						</div>
 					</div>
-				</div>
+				<?php endif; ?>	
 
 				<div class="row lr-10 minus">
-					<div class="col-md-4 col-sm-6">
-						<a href="#" class="story-item d-flex flex-column">
-							<div class="media">
-								<img src="<?php get_template_directory_uri();?>/images/Story-1.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text mt-auto">
-								<h5 class="title">USPC 500</h5>
-								<p>Lorem ipsum dolor consetetur sadipscing elitr, sed.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 col-sm-6">
-						<a href="#" class="story-item d-flex flex-column">
-							<div class="media">
-								<img src="<?php get_template_directory_uri();?>/images/story-2.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text mt-auto">
-								<h5 class="title">Malta</h5>
-								<p>Lorem ipsum dolor consetetur sadipscing elitr, sed.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 col-sm-6">
-						<a href="#" class="story-item d-flex flex-column">
-							<div class="media">
-								<img src="<?php get_template_directory_uri();?>/images/story-3.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text mt-auto">
-								<h5 class="title">Sagamore Beach</h5>
-								<p>Lorem ipsum dolor consetetur sadipscing elitr, sed.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 col-sm-6">
-						<a href="#" class="story-item d-flex flex-column">
-							<div class="media">
-								<img src="<?php get_template_directory_uri();?>/images/story-1.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text mt-auto">
-								<h5 class="title">Malta</h5>
-								<p>Lorem ipsum dolor consetetur sadipscing elitr, sed.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 col-sm-6">
-						<a href="#" class="story-item d-flex flex-column">
-							<div class="media">
-								<img src="<?php get_template_directory_uri();?>/images/story-2.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text mt-auto">
-								<h5 class="title">Malta</h5>
-								<p>Lorem ipsum dolor consetetur sadipscing elitr, sed.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 col-sm-6">
-						<a href="#" class="story-item d-flex flex-column">
-							<div class="media">
-								<img src="<?php get_template_directory_uri();?>/images/story-3.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text mt-auto">
-								<h5 class="title">Sagamore Beach</h5>
-								<p>Lorem ipsum dolor consetetur sadipscing elitr, sed.</p>
-							</div>
-						</a>
-					</div>
+					<?php foreach( $stories as $story ):?>
+						<div class="col-md-4 col-sm-6">
+							<a href="<?php echo esc_url($story['url']);?>" class="story-item d-flex flex-column">
+								<?php
+									if( $story['image'] )
+									{
+										printf( '<div class="media"><img src="%s" class="img-fluid" alt="%s"></div>', $story['image']['url'], 'alt' );
+									}
+									if( $story['title'] || $story['content'] )
+									{
+										printf( '<div class="text mt-auto"><h5 class="title">%s</h5>%s', $story['title'], $story['content'] );
+									}								
+								?>	
+								</div>
+							</a>
+						</div>
+					<?php endforeach;?>
 				</div>
 			</div>
 		</section><!-- /featured-stories -->
+	<?php endif; ?>	
 
 	</div><!-- /content-area -->
 

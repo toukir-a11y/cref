@@ -126,109 +126,74 @@
 				</div>
 			</div>
 		</div>
-
+   
 		<section class="leadership-team">
 			<div class="container">
 				<div class="row">
-					<div class="col-12">
-						<div class="entry-title text-center">
-							<h3 class="title base">Meet the Leadership Team</h3>
-							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-						</div>
-					</div>
+                    <?php $team = get_field( 'meet_the_team' ); $position = get_field('position'); if( !empty($team) ):?>    
+                        <div class="col-12">
+                            <div class="entry-title text-center">
+                                <?php
+                                    if( $team['title'] && $team['content'] )
+                                    {
+                                        printf( ' <h3 class="title base">%s</h3>%s', $team['title'], $team['content']  );
+                                    }
+
+                                    
+                                ?>                                
+                            </div>
+                        </div>
+                    <?php endif; ?>    
 				</div>
-
+                
+ 
 				<div class="row lr-10 minus">
+
+                <?php                           
+                    $args = array(
+                        'post_type'         => 'team_member',                       
+                        'order'             => 'ASC',
+                        'posts_per_page'    =>  7,
+
+                       
+                    );
+                        
+                    $the_query = new WP_Query($args); 
+
+                    if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); 
+                    
+                    
+                ?> 
 					<div class="col-xl-3 col-lg-4 col-6">
-						<a href="team-details.html" class="team-member">
+						<a href="<?php the_permalink();?>" class="team-member">
 							<div class="media">
-								<img src="<?php echo get_theme_file_uri();?>/images/member-1.jpg" class="img-fluid" alt="">
+								<?php
+                                    if(has_post_thumbnail())
+                                    {
+                                       the_post_thumbnail('large', array('class'=>'img-fluid') );
+                                    }
+                                ?>                                
 							</div>
-
 							<div class="text">
-								<h5 class="name">Robert Gendron</h5>
-								<span class="position">Chief Executive Officer</span>
+								<h5 class="name"><?php the_title(); ?></h5>
+
+                                <?php  $position = get_field( 'position' ); 
+                               
+                                if( !empty($position) )
+                                {
+                                    printf( '<span class="position">%s</span>', $position );                                                                      
+                                }
+                                ?>            
+                              							
 							</div>
-						</a>
+						</a>    
 					</div>
+                        <?php
+                                endwhile;
+                            endif;
+                        wp_reset_query();
 
-					<div class="col-xl-3 col-lg-4 col-6">
-						<a href="team-details.html" class="team-member">
-							<div class="media">
-								<img src="<?php echo get_theme_file_uri();?>/images/member-2.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text">
-								<h5 class="name">Patrick Murphy</h5>
-								<span class="position">VP, Business Development</span>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-xl-3 col-lg-4 col-6">
-						<a href="team-details.html" class="team-member">
-							<div class="media">
-								<img src="<?php echo get_theme_file_uri();?>/images/member-3.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text">
-								<h5 class="name">Chad Boulay</h5>
-								<span class="position">VP, Property Management</span>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-xl-3 col-lg-4 col-6">
-						<a href="team-details.html" class="team-member">
-							<div class="media">
-								<img src="<?php echo get_theme_file_uri();?>/images/member-4.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text">
-								<h5 class="name">Mathew Gruber</h5>
-								<span class="position">Chief Financial Officer</span>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-xl-3 col-lg-4 col-6">
-						<a href="team-details.html" class="team-member">
-							<div class="media">
-								<img src="<?php echo get_theme_file_uri();?>/images/member-5.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text">
-								<h5 class="name">Michael Taylor</h5>
-								<span class="position">Chief Development Officer</span>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-xl-3 col-lg-4 col-6">
-						<a href="team-details.html" class="team-member">
-							<div class="media">
-								<img src="<?php echo get_theme_file_uri();?>/images/member-6.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text">
-								<h5 class="name">Robert Gendron</h5>
-								<span class="position">VP, Planning & Design</span>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-xl-3 col-lg-4 col-6">
-						<a href="team-details.html" class="team-member">
-							<div class="media">
-								<img src="<?php echo get_theme_file_uri();?>/images/member-7.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text">
-								<h5 class="name">Robert Gendron</h5>
-								<span class="position">VP, CREF International</span>
-							</div>
-						</a>
-					</div>
+                        ?>
 				</div>
 			</div>
 		</section><!-- /leadership-team -->

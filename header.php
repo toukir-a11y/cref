@@ -8,7 +8,7 @@
     <?php wp_head();?>
 </head>
 <body  <?php body_class(); ?>>
-	<div id="sidr">
+	<div id="sidr" class="d-none">
         <div class="navbar-header d-flex align-items-center">
     		<a href="#sidr" class="navbar-toggler">
     			<span class="icon-bar"></span>
