@@ -5,10 +5,16 @@
 
 	<div id="primary" class="content-area">
 
-		<div class="page-header">
-			<img src="../images/page-header-solution-details.jpg" class="img-fluid" alt="">
-		</div>
-
+		<?php
+			$image = get_field( 'bg_image' ); if( !empty($image) )
+			{
+				printf( '<div class="page-header"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url($image['url']), 'alt' );
+			}
+			else
+			{
+			   printf( '<div class="page-header"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url( get_theme_file_uri( '/images/page-header-solution-details.jpg' ) ), get_bloginfo( 'name') );
+			}			
+		?>
 		<section class="breadcrumb-wrapper">
 		    <div class="container">
 		        <div class="row">
@@ -24,137 +30,149 @@
 		        </div>
 		    </div>
 		</section><!-- /breadcrumb -->
-
+	
+	<?php $about = get_field( 'program_manegment' ); $btn = $about['button']; if( !empty($about) ):?>		
 		<section class="solutions-details-page">
 			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="entry-title">
-							<h1 class="title h2 primary text-uppercase">Capital Program Management</h1>
-							<h3 class="sub-title base">Mitigate risk. Save time. Reduce Cost.</h3>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="content">
-							<p>The integration of CREF capital program management complements your team with an infusion of historical, real-time, and predictive data. This ultimately mitigates risk, saves time, reduces costs and eliminates surprises across your capital program.</p>
-
-							<a href="#" class="btn text-uppercase">View Cpm Success Story</a>
-						</div>
-					</div>
-
-					<div class="col-lg-6">
-						<div class="row lr-10 minus">
-							<div class="col-6">
-								<div class="solution-feature d-flex align-items-center">
-									<div class="icon float-left">
-										<i class="icon-stack-money"></i>
-									</div>
-
-									<div class="text">
-										<span class="title">Capital Budget Planning</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-6">
-								<div class="solution-feature d-flex align-items-center">
-									<div class="icon float-left">
-										<i class="icon-stack-money"></i>
-									</div>
-
-									<div class="text">
-										<span class="title">Owners Project Management</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-6">
-								<div class="solution-feature d-flex align-items-center">
-									<div class="icon float-left">
-										<i class="icon-real-estate"></i>
-									</div>
-
-									<div class="text">
-										<span class="title">Staff Programming & Fit Planning</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-6">
-								<div class="solution-feature d-flex align-items-center">
-									<div class="icon float-left">
-										<i class="icon-real-estate"></i>
-									</div>
-
-									<div class="text">
-										<span class="title">Funding Requisition & Allocation</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="management-services">
+				<?php if( !empty($about['title']) || $about['sub_title'] ):?>	
 					<div class="row">
 						<div class="col-12">
-							<h3 class="title">All Capital Program Management Services</h3>
-
-							<ul class="services">
-								<li>Budget Planning</li>
-								<li>Capital Program Metric Data</li>
-								<li>Commissioning Management</li>
-								<li>Construction Administration</li>
-								<li>Vendor Management</li>
-								<li>Design Oversight</li>
-								<li>Equipment Planning</li>
-								<li>Feasibility Studies</li>
-								<li>Funding Allocation</li>
-								<li>International Development</li>
-								<li>Move Management</li>
-								<li>RFP Facilitation</li>
-								<li>Staff Programming and Fit- Planning</li>
-								<li>Warranty Process Management </li>
-							</ul>
+							<div class="entry-title">
+								<?php
+									if($about['title'])
+									{
+										printf( '<h1 class="title h2 primary text-uppercase">%s</h1>', $about['title'] );
+									}
+									if($about['sub_title'])
+									{
+										printf( '<h3 class="sub-title base">%s</h3>', $about['sub_title'] );
+									}
+								?>								
+							</div>
 						</div>
 					</div>
+				<?php endif; ?>
+
+				<div class="row">
+					<?php if( !empty($about['content']) || $btn ): ?>
+						<div class="col-lg-6">
+							<div class="content">
+								<?php
+									if( $about['content'] )
+									{
+										printf( '%s', $about['content'] );
+									}
+								?>
+								<a href="<?php
+										
+									if( $btn['type']  == 'internal' && !empty($btn['internal_url'] ))
+									{
+									printf( '%s', esc_url($btn['internal_url']) );
+									}
+									if( $btn['type'] == 'external' && !empty($btn['external_url'] ))
+									{
+										printf( '%s', esc_url($btn['external_url']) );
+									}
+            
+                                    ?>" class="btn text-uppercase">
+									<?php 
+                                        
+									if( !empty($btn['text'] ))
+									{
+										printf( '%s',$btn['text'] );
+									}                                        
+                                    ?>
+								</a>
+							</div>
+						</div>
+					<?php endif;?>	
+					<?php $features = $about['features']; if( !empty($features) ): ?>
+						<div class="col-lg-6">
+							<div class="row lr-10 minus">
+								<?php foreach( $features as $feature ): ?>
+									<div class="col-6">
+										<div class="solution-feature d-flex align-items-center">
+											<?php
+												if( $feature['icon'] )
+												{
+													printf( '<div class="icon float-left"><i class="%s"></i></div>', $feature['icon'] );
+												}
+												if($feature['title'])
+												{
+													printf( '<div class="text"><span class="title">%s</span></div>', $feature['title'] );
+												}											
+											?>
+										</div>
+									</div>
+								<?php endforeach;?>
+							</div>
+						</div>
+					<?php endif; ?>	
 				</div>
+				<?php $services = $about['services']; if( $about['service_title'] && $services ): ?>
+					<div class="management-services">
+						<div class="row">
+							<div class="col-12">
+								<?php
+									if($about['service_title'])
+									{
+										printf( '<h3 class="title">%s</h3>', $about['service_title'] );
+									}
+								?>
+								<ul class="services">
+									<?php foreach( $services as $service ): ?>
+										<li>
+											<?php 
+												if( $service['services'] )
+												{
+													printf( '%s', $service['services'] );
+												}
+											?>
+										</li>
+									<?php endforeach; ?>
+								</ul>
+							</div>
+						</div>
+					</div>
+				<?php endif;?>	
 			</div>
 		</section><!-- /about-page -->
+	<?php endif; ?>
 
+	<?php $success = get_field( 'success_story' ); if ( !empty($success) ): ?>
 		<section class="success-story">
 			<div class="container">
 				<div class="row lr-10">
-					<div class="col-12">
-						<div class="entry-title">
-							<h3 class="title base">A Success Story: CREF Helps Abigail Co. Transition to a New State-of-the-Art Facility</h3>
+					<?php 
+						if( $success['title'] )
+						{
+							printf( '<div class="col-12"><div class="entry-title"><h3 class="title base">%s</h3></div></div>', $success['title'] );
+						}
+					?>
+
+					<?php $stories = $success['stories']; if( $stories ): ?>
+						<div class="col-lg-6">
+							<div class="content">
+								<div class="content-block">
+									<?php foreach( $stories as $story )
+									{
+										if( $story['title'] )
+										{
+											printf( '<h5 class="title">%s</h5>', $story['title'] );
+										}
+										if( $story['content'] )
+										{
+											printf( '%s', $story['content'] );
+											
+										}						
+									} 
+									?>
+								</div>
+							</div>
 						</div>
-					</div>
+					<?php endif; ?>
 
-					<div class="col-lg-6">
-						<div class="content">
-							<div class="content-block">
-								<h5 class="title">The Challenge</h5>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-							</div>
-
-							<div class="content-block">
-								<h5 class="title">The Solution</h5>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
-							</div>
-							
-							<div class="content-block">
-								<h5 class="title">The Results</h5>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-							</div>
-						</div>
-					</div>
-
+				<?php $proof = $success['the_proof']; if( !empty($proof) || $success['title'] ): ?>
 					<div class="col-lg-6">
 						<div class="theproof">
 							<h5 class="title">The Proof</h5>
@@ -192,9 +210,11 @@
 							</div>
 						</div>
 					</div>
+				<?php endif; ?>	
 				</div>
 			</div>
 		</section><!-- /success-story -->
+	<?php endif; ?>	
 
 		<section class="representative">
 			<div class="container">
