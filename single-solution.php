@@ -74,10 +74,13 @@
 										printf( '%s', esc_url($btn['external_url']) );
 									}
             
-                                    ?>" class="btn text-uppercase">
+                                    ?>"
+									
+									class="btn text-uppercase">
+									
 									<?php 
                                         
-									if( !empty($btn['text'] ))
+									if( $btn['text'] )
 									{
 										printf( '%s',$btn['text'] );
 									}                                        
@@ -172,223 +175,276 @@
 						</div>
 					<?php endif; ?>
 
-				<?php $proof = $success['the_proof']; if( !empty($proof) || $success['title'] ): ?>
-					<div class="col-lg-6">
-						<div class="theproof">
-							<h5 class="title">The Proof</h5>
+					<?php $proofs = $success['the_proof']; if( !empty($proof) || $success['title'] ): ?>
+						<div class="col-lg-6">
+							<div class="theproof">
+								<?php
+									if($success['title'])
+									{
+										printf( '<h5 class="title">%s</h5>', $success['title'] );
+									}
+								?>
+								<div class="row lr-10 gallery-popup">
+									<?php foreach( $proofs as $key =>  $proof  ):
 
-							<div class="row lr-10 gallery-popup">
-								<div class="col-4">
-									<a href="../images/theproof-1.jpg" class="popup" data-effect="mfp-move-from-top">
-										<img src="../images/theproof-1.jpg" class="img-fluid" alt="">
-									</a>
-								</div>
+											switch( $key % 4 )
+										{
+											case 0:
+												$class_names = 'col-sm-4 ';
+											break;
 
-								<div class="col-8">
-									<a href="../images/theproof-2.jpg" class="popup" data-effect="mfp-move-from-top">
-										<img src="../images/theproof-2.jpg" class="img-fluid" alt="">
-									</a>
-								</div>
+											case 1:
+												$class_names = 'col-sm-8 ';
+											break;
 
-								<div class="col-8">
-									<a href="../images/theproof-3.jpg" class="popup" data-effect="mfp-move-from-top">
-										<img src="../images/theproof-3.jpg" class="img-fluid" alt="">
-									</a>
-								</div>
+											case 2:
+												$class_names = 'col-sm-8 ';
+											break;
 
-								<div class="col-4">
-									<a href="../images/theproof-4.jpg" class="popup" data-effect="mfp-move-from-top">
-										<img src="../images/theproof-4.jpg" class="img-fluid" alt="">
-									</a>
-								</div>
+											case 3:
+												$class_names = 'col-sm-4 ';
+											break;
 
-								<div class="col-4">
-									<a href="../images/theproof-5.jpg" class="popup" data-effect="mfp-move-from-top">
-										<img src="../images/theproof-5.jpg" class="img-fluid" alt="">
-									</a>
+											default:
+												$class_names = 'col-sm-4 ';
+										}
+									?>
+										<div class="<?php echo $class_names;?>">
+											<?php
+												if( $proof['image'] )
+												{
+													printf( '<a href="%s" class="popup" data-effect="mfp-move-from-top"><img src="%s" class="img-fluid" alt="%s"></a>',
+													esc_url($proof['image']['url']), esc_url($proof['image']['url']), 'alt' );
+												}
+											?>
+										</div>
+									<?php endforeach; ?>	
 								</div>
 							</div>
 						</div>
-					</div>
-				<?php endif; ?>	
+					<?php endif; ?>	
 				</div>
 			</div>
 		</section><!-- /success-story -->
 	<?php endif; ?>	
-
+	
+	<?php $representive = get_field( 'representative' ); $testimonial = get_field( 'testimonial' ); if( !empty($representive || $testimonial) ): ?>
 		<section class="representative">
 			<div class="container">
 				<div class="row lr-10">
-					<div class="col-12">
-						<div class="entry-title">
-							<h3 class="title base">Nothing’s Too Big or Too Small…</h3>
-							<p>We’re able to concurrently manage thousands of complex healthcare-based projects at any give time.</p>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<p>Representative projects include:</p>
-
-						<ul class="icon-list list-unstyled">
-							<li><i class="icon-womens"></i><span>Women’s services, facilities and expansions</span></li>
-							<li><i class="icon-mri"></i><span>Diagnostic imaging equipment</span></li>
-							<li><i class="icon-drugs"></i><span>Substance abuse</span></li>
-							<li><i class="icon-lab-test"></i><span>Cath labs</span></li>
-							<li><i class="icon-operating-room"></i><span>Operating rooms</span></li>
-							<li><i class="icon-hospital"></i><span>Patient bed expansions</span></li>
-							<li><i class="icon-pulse"></i><span>ICUs</span></li>
-						</ul>
-
-						<h5>A near perfect track record for on-time and on-budget:</h5>
-
-						<ul>
-							<li>Prioritize cash flows</li>
-							<li>Deferred capital</li>
-							<li>Mental Health</li>
-						</ul>
-
-						<a href="#" class="btn primary text-uppercase">See an example of strategic planning and campus updates</a>
-					</div>
-
-					<div class="col-md-6">
-						<img src="../images/map.svg" class="img-fluid" alt="">
-						<h5>Scalable + Expertise</h5>
-						<p>CREF if your scalable solution – whether as an extension of your facilities group across a large geographical footprint, or being able to assess early potential projects</p>
-
-						<ul>
-							<li>1000 projects managed at one time</li>
-							<li>1 billion dollars worth of projects at any given time</li>
-							<li>Broad spectrum of complexity ranging from cosmetic upgrades to hybrid surgery suites</li>
-							<li>Full ground-up hospital construction</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="testimonial">
-					<div class="row">
+					<?php if( $representive['title'] || $representive['content'] ):?>
 						<div class="col-12">
-							<h5 class="widget-title">Testimonial</h5>
-
-							<blockquote class="blockquote">
-								<div class="icon float-left">
-									<img src="../images/svg/quote.svg" class="img-fluid" alt="">
-								</div>
-
-								<div class="quote">
-									<p>CREF has been instrumental in helping us manage our growth from 9 to 40 hospitals.  They help us prioritize and manage capital requests, understand the complexities of our geographic footprint and our healthcare asset portfolio, and so this with a responsiveness that feels like we’re all one team.</p>
-
-									<div class="client d-flex align-items-center">
-										<div class="image float-left">
-											<img src="../images/testimonial.jpg" class="img-fluid" alt="">
-										</div>
-
-										<div class="txt">
-											<h6 class="name">John Polanowicz</h6>
-											<span class="position">Former Steward COO, Hospital President</span>
-										</div> 
-									</div>
-								</div>
-							</blockquote>
+							<div class="entry-title">
+								<?php
+									if( $representive['title'] )
+									{
+										printf( '<h3 class="title base">%s</h3>', $representive['title'] );
+									}
+									if( $representive['content'] )
+									{
+										printf( '%s', $representive['content'] );
+									}
+								?>
+							</div>
 						</div>
+					<?php endif; ?>
+
+					<?php $project = $representive['projects']; $btn = $representive['button']; if( !empty($project || $btn) ): ?>
+						<div class="col-md-6">
+							<?php
+								if( $project['title'] )
+								{
+									printf( '%s', $project['title'] );
+								}
+							?>
+							<ul class="icon-list list-unstyled">
+								<?php $programs = $project['services']; if( !empty($programs) ){ foreach( $programs as $program )
+									{			
+										if( $program )
+										{
+											printf( '<li><i class="%s"></i><span>%s</span></li>', $program['icon'], $program['text'] );
+										}
+									}
+								}
+								?>
+							</ul>
+							<?php
+								if(  $project['sub_title'] )
+								{
+									printf( '<h5>%s</h5>', $project['sub_title'] );
+								}							
+							?>
+							<ul>
+								<?php $budgets = $project['budgets'];  if( !empty($budgets) ) { foreach( $budgets as $budget )
+									{
+										if( $budget )
+										{
+											printf( '<li>%s</li>', $budget['text'] );
+										}
+
+										}
+									} 
+								?>
+							</ul>
+							<a href="<?php										
+								if( $btn['type']  == 'internal' && !empty($btn['internal_url'] ))
+								{
+								printf( '%s', esc_url($btn['internal_url']) );
+								}
+								if( $btn['type'] == 'external' && !empty($btn['external_url'] ))
+								{
+									printf( '%s', esc_url($btn['external_url']) );
+								}
+								?>" class="btn primary text-uppercase">
+								<?php 										
+								if( !empty($btn['text'] ))
+								{
+									printf( '%s',$btn['text'] );
+								}    
+								?>
+							</a>
+						</div>
+					<?php endif; ?>	
+				<?php $solution = $representive['scalable_solution']; if( !empty($solution) ): ?>
+					<div class="col-md-6">
+						<?php
+							if( $solution['image'] )
+							{
+								printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url($solution['image']['url']), 'alt' );
+							}
+							if( $solution['title'] )
+							{
+								printf( '<h5>%s</h5>', $solution['title'] );
+							}
+							if( $solution['content'] )
+							{
+								printf( '%s', $solution['content'] );
+							}
+						?>
+						<ul>
+							<?php $expertises = $solution['expertises']; if( !empty($expertises) ) { foreach( $expertises as $expertise )
+							 {
+								if( $expertise )
+								{
+									printf( '<li>%s</li>', $expertise['text'] );
+								}
+
+								}
+							 } 
+							?>
+						</ul>
 					</div>
+				<?php endif; ?>	
 				</div>
+				<?php  $testimonials = get_field( 'testimonial' ); $testimonial_title = get_field( 'testimonial_title' ); if( !empty( $testimonials ) ):?>
+					<?php foreach( $testimonials as $testimonial ):?>
+						<div class="testimonial">
+							<div class="row">
+								<div class="col-12">
+									<?php
+										if( $testimonial_title )
+										{
+											printf( '<h5 class="widget-title">%s</h5>', $testimonial_title );
+										}
+									?>
+									<blockquote class="blockquote">
+										<?php
+											if( $testimonial['image'] )
+											{
+												printf( '<div class="icon float-left"><img src="%s" class="img-fluid" alt="%s"></div>'
+												,esc_url($testimonial['image']['url']), 'alt' );
+											}
+										?>
+										<div class="quote">
+											<?php
+												if( $testimonial['quote'] )
+												{
+													printf( '%s', $testimonial['quote'] );
+												}
+											?>
+											<div class="client d-flex align-items-center">
+												<?php
+													if( $testimonial['quote_image'] )
+													{
+														printf( '<div class="image float-left"><img src="%s" class="img-fluid" alt="%s"></div>'
+														,esc_url($testimonial['quote_image']['url']), 'alt' );
+													}
+
+													if( $testimonial['name'] || $testimonial['position'] )
+													{
+														printf( '<div class="txt"><h6 class="name">%s</h6>	<span class="position">%s</span></div>'
+														, $testimonial['name'], $testimonial['position'] );
+													}
+												?>
+											</div>
+										</div>
+									</blockquote>
+								</div>
+							</div>
+						</div>
+					<?php endforeach; ?>						
+				<?php endif; ?>	
 			</div>
 		</section><!-- /representative -->
-
+	<?php endif; ?>	
+	
+	<?php $cref = get_field('cref_solutions');?>
 		<section class="crefsolutions">
 			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="entry-title">
-							<h3 class="title base">CREF Solutions</h3>
+				<?php if( !empty($cref['title']) ):?>
+					<div class="row">			
+						<div class="col-12">
+							<div class="entry-title">
+								<?php 
+									if($cref['title'])
+									{
+										printf( '<h3 class="title base">%s</h3>', $cref['title'] );
+									}
+								?>
+							</div>
 						</div>
 					</div>
-				</div>
+				<?php endif; ?>	
 
 				<div class="row lr-10">
-					<div class="col-xl-3 col-sm-6">
-						<a href="#" class="solution-box d-flex flex-column align-items-start justify-content-between">
-							<div class="text">
-								<h5 class="title">Capital Program Management (CPM</h5>
-								<p>The integration of CREF capital program management complements your team with an infusion of historical, real-time, and predictive data.</p>
-							</div>
-							
-							<div class="bottom">
-								<button class="btn text-uppercase">View Details</button>
-							</div>
-						</a>
-					</div>
+				<?php
+					$args = array(
+						'post_type'         => 'solution',                        
+						'order'             => 'DESC',
+						'posts_per_page'    =>  4
+					);
+						
+					$the_query = new WP_Query($args); 
 
-					<div class="col-xl-3 col-sm-6">
-						<a href="#" class="solution-box d-flex flex-column align-items-start justify-content-between">
-							<div class="text">
-								<h5 class="title">Real Estate Services</h5>
-								<p>Our real estate services platform includes a fully automated database of portfolio metrics.</p>
-							</div>
-							
-							<div class="bottom">
-								<button class="btn text-uppercase">View Details</button>
-							</div>
-						</a>
-					</div>
+					if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); 
 
-					<div class="col-xl-3 col-sm-6">
-						<a href="#" class="solution-box d-flex flex-column align-items-start justify-content-between">
-							<div class="text">
-								<h5 class="title">Facilities Performance Services (FPS)</h5>
-								<p>Utilizing real-time facilities data, our industry-leading professionals implement strategic plans.</p>
-							</div>
-							
-							<div class="bottom">
-								<button class="btn text-uppercase">View Details</button>
-							</div>
-						</a>
-					</div>
+					$meta = get_field('cref_solutions');
 
+					?>   
 					<div class="col-xl-3 col-sm-6">
-						<a href="#" class="solution-box d-flex flex-column align-items-start justify-content-between">
+						<a href="<?php echo the_permalink();?>" class="solution-box d-flex flex-column align-items-start justify-content-between">
 							<div class="text">
-								<h5 class="title">Energy & Engineering</h5>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+								<h5 class="title"><?php echo the_title();?></h5>
+									<?php the_content();?>
 							</div>
-							
-							<div class="bottom">
-								<button class="btn text-uppercase">View Details</button>
-							</div>
+							<?php 
+								if( !empty($cref['button_text']) )
+								{
+									printf( '<div class="bottom"><button class="btn text-uppercase">%s</button></div>', $cref['button_text'] );
+									
+								}							
+							?>
 						</a>
 					</div>
+						<?php
+									endwhile;
+								endif;
+							wp_reset_query();
+						?>
 				</div>
-
-				<div class="icref-suite">
-					<div class="row align-items-center">
-						<div class="col-sm-6">
-							<div class="entry-title">
-								<span class="sub-title">iCREF Integrated Data Platform</span>
-								<h3 class="title">The iCREF Software Suite</h3>
-								<p>iCREF is a fully integrated asset management software suite that manages all aspects of your corporate facilities and property projects.</p>
-								<a href="#" class="btn primary text-uppercase">View icref suite</a>
-							</div>
-						</div>
-
-						<div class="col-sm-6">
-							<div class="media">
-								<img src="../images/icref-suite.png" class="img-fluid" alt="">
-							</div>
-						</div>
-					</div>
-				</div>
+					<?php get_template_part( 'template_parts/suite');?>
 			</div>
 		</section><!-- /cref-solutions -->
-
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<hr class="two">
-				</div>
-			</div>
-		</div>
-
-	</div><!-- /content-area -->
 
 <?php 
 

@@ -1,116 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Solutions W/O Video | CREF</title>
-    <!-- Bootstrap -->
-    <link href="https://use.typekit.net/vjt2xyc.css" rel="stylesheet">
-    <link href="../css/plugins.css" rel="stylesheet">
-    <link href="../style.css" rel="stylesheet">
-</head>
-<body>
-	<div id="sidr">
-        <div class="navbar-header d-flex align-items-center">
-    		<a href="#sidr" class="navbar-toggler">
-    			<span class="icon-bar"></span>
-    		  	<span class="icon-bar"></span>
-    		  	<span class="icon-bar"></span>
-    	  	</a>
+<?php
+ /* Template Name: Solutions Video  */ 
+ 
+ get_header();
 
-        	<div class="logo">
-        	 	<a class="navbar-brand" href="index.html">
-        	 		<img src="../images/logo.png" class="img-fluid" alt="">
-        	 	</a>
-        	</div>
-        </div>
-
-        <div class="navigation">
-            <ul class="nav navbar-nav">
-              	<li><a href="#">About</a></li>
-              	<li><a href="#">News & Insights</a></li>
-              	<li><a href="#">Careers</a></li>
-              	<li><a href="#">Contact Us</a></li>
-              	<li class="dropdown">
-              		<a href="about.html">Solutions</a>
-
-              		<ul class="dropdown-menu">
-              			<li><a href="#">Capital Program Management</a></li>
-              			<li><a href="#">Facilities Performance Services</a></li>
-              			<li><a href="#">Real Estate Services</a></li>
-              			<li><a href="#">Engineering & Energy</a></li>
-              			<li><a href="#">CREF International</a></li>
-              		</ul>
-              	</li>
-            </ul>
-        </div>
-
-        <div class="navbar-footer">
-        	<a href="#" class="btn text-uppercase">View icref suite</a>
-        </div>
-	</div><!-- /mobile-header -->
-
-	<header class="header">
-		<div class="navbar navbar-expand">
-		  	<div class="container-fluid d-flex align-items-center justify-content-between">
-				<div class="navbar-header d-flex align-items-center">
-					<div class="navbar-toggler">
-						<span class="icon-bar"></span>
-					  	<span class="icon-bar"></span>
-					  	<span class="icon-bar"></span>
-					</div>
-
-					<div class="logo">
-					 	<a class="navbar-brand" href="index.html">
-					 		<img src="../images/logo.png" class="img-fluid" alt="">
-					 	</a>
-					</div>
-				</div>
-		
-				<div class="collapse navbar-collapse">
-				  	<ul class="nav navbar-nav">
-				    	<li><a href="#">About Us</a></li>
-				    	<li><a href="#">Solutions</a></li>
-				    	<li><a href="#">Contact Us</a></li>
-				  	</ul>
-
-				  	<ul class="navbar-nav navbar-nav-right">
-				  	  	<li class="social">
-				  	  		<ul class="social-media list-inline">
-				  	  			<li><a href="#" class="icon-twitter" target="_blank"></a></li>
-				  	  			<li><a href="#" class="icon-linkedin" target="_blank"></a></li>
-				  	  			<li><a href="#" class="icon-rss" target="_blank"></a></li>
-				  	  		</ul>
-				  	  	</li>
-
-				  	  	<li class="header-search">
-				  	  		<div class="search-wrap">
-				  	  			<a class="search-toggle" data-selector=".search-wrap">
-				  	  				<i class="icon-search"></i>
-				  	  			</a>
-
-				  	  			<form action="" method="get" class="search-box">
-				  	  				<input type="search" name="s" class="search-input" id="search"
-				  	  					placeholder="Search CREF">
-				  	  				<button type="submit" class="search-submit"><i class="icon-search"></i></button>
-				  	  			</form>
-				  	  		</div>
-				  	  	</li>
-				  	</ul>
-				</div><!-- /collapse -->
-		  	</div><!-- /container-fluid -->
-		</div><!--/ Navbar -->
-	</header>
+ ?>
+ 
 	<div class="header_gutter"></div>
 
 	<div id="primary" class="content-area">
 
-		<div class="page-header">
-			<img src="../images/page-header-solutions.jpg" class="img-fluid" alt="">
-		</div>
-
+        <?php
+			$image = get_field( 'bg_image' ); if( !empty($image) )
+			{
+				printf( '<div class="page-header"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url($image['url']), 'alt' );
+			}
+			else
+			{
+			   printf( '<div class="page-header"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url( get_theme_file_uri( '/images/page-header-solutions.jpg' ) ), get_bloginfo( 'name') );
+			}			
+		?>
 		<section class="breadcrumb-wrapper">
 		    <div class="container">
 		        <div class="row">
@@ -124,29 +32,47 @@
 		        </div>
 		    </div>
 		</section><!-- /breadcrumb -->
-
+    <?php $about = get_field( 'about' ); if( !empty($about) ): $solutions = $about['solutions']; ?>
 		<section class="solutions-video-page">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
 						<div class="entry-title">
-							<h1 class="title h2 primary text-uppercase">Solutions</h1>
-							<h3 class="sub-title base">CREF is the undisputed leader in healthcare real estate asset management</h3>
-
-							<p>Unlike other real estate management companies serving multiple industries, CREF has  pioneered the application of state-of-the-art real estate tools and management to the health  care industry exclusively. With operations in nine states, three countries, $10 billion in asset  management representing forty million square feet, CREF is the undisputed leader in healthcare real estate asset management.</p>
-
+                            <?php
+                                if( $about['title'] )
+                                {
+                                    printf( '<h1 class="title h2 primary text-uppercase">%s</h1>', $about['title'] );
+                                }
+                                if( $about['sub_title'] )
+                                {
+                                    printf( '<h3 class="sub-title base">%s</h3>', $about['sub_title'] );
+                                }
+                                if( $about['content'] )
+                                {
+                                    printf( '%s', $about['content'] );
+                                }                            
+                            ?>
 							<ul class="anchor-links list-inline smoothScroll lastNobullet">
-								<li class="label">Jump to:</li>
-								<li><a href="#solution-1">Real Estate Services</a></li>
-								<li><a href="#solution-2">Capital Program Management</a></li>
-								<li><a href="#solution-3">Facilities Performance Services</a></li>
-								<li><a href="#solution-4">Engineering & Energy</a></li>
+                                <?php
+                                    if($about['lebel'])
+                                    {
+                                        printf( '<li class="label">%s</li>', $about['lebel'] );
+                                    }
+                                    if( !empty($solutions) ) {
+                                   
+                                        foreach( $solutions as $solution ) {
+                                       
+                                            printf( '<li><a href="%s">%s</a></li>', esc_url( $solution['url'] ), $solution['text'] );
+                                        }
+                                    }
+                                ?>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section><!-- /about-page -->
+    <?php endif; ?>    
 
 		<section class="markets-forward">
 			<div class="container">
@@ -252,10 +178,10 @@
 								<h3 class="title">Real Estate Services</h3>
 								<p>Unlike other real estate management companies serving multiple industries, CREF has  pioneered the application of state-of-the-art real estate tools and management to the health.</p>
 								<ul class="arrow-lists list-unstyled">
-									<!-- <li>Development/Acquisitions/Disposition</li>
+									<li>Development/Acquisitions/Disposition</li>
 									<li>Property Management</li>
 									<li>Lease Administration</li>
-									<li>Tenant Coordination</li> -->
+									<li>Tenant Coordination</li>
 								</ul>
 								<a href="solution-details.html" class="btn text-uppercase">View Real Estate Services</a>
 							</div>
@@ -479,135 +405,12 @@
 			</div>
 		</section><!-- /icref-integrated -->
 
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<hr class="two">
-				</div>
-			</div>
-		</div>
 
-	</div><!-- /content-area -->
 
-	<section class="call-action">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="content" style="background-image: url(../images/call-action.jpg)">
-						<span class="sub-title">Contact Us</span>
-						<h3 class="title">Start the Conversation</h3>
-						<p>Reach out anytime. We look forward to hearing from you.</p>
-						<a href="#" class="btn text-uppercase">Contact Us</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section><!-- /call-action -->
 
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<hr class="two">
-			</div>
-		</div>
-	</div>
+<?php 
+    
+    get_template_part( 'template_parts/call_action');
 
-	<footer class="footer">
-		<div class="container">
-			<div class="row lr-10">
-				<div class="col-lg-3">
-					<div class="footer-logo">
-						<a href="index.html">
-							<img src="../images/footer-logo.png" class="img-fluid" alt="">
-						</a>
-					</div>
-				</div>
-
-				<div class="col-lg-8">
-					<div class="footer-menu">
-						<ul class="list-inline">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Integrated Services</a></li>
-							<li><a href="#">About CREF</a></li>
-							<li><a href="#">Contact Us</a></li>
-						</ul>
-					</div>
-
-					<div class="row lr-10">
-						<div class="col-sm-6">
-							<div class="footer-widget">
-								<ul class="footer-widget-menu list-unstyled">
-									<li class="title"><a href="#">Capital Program Management</a></li>
-									<li><a href="#">Capital Budget Planning
-									<li><a href="#">Staff Programming & Fit Planning</a></li>
-									<li><a href="#">Owners Project Management</a></li>
-									<li><a href="#">Funding Requisitioning & Allocation</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-sm-6">
-							<div class="footer-widget">
-								<ul class="footer-widget-menu list-unstyled">
-									<li class="title"><a href="#">Real Estate Services</a></li>
-									<li><a href="#">Development/ Acquisitions/ Disposition</a></li>
-									<li><a href="#">Property Management</a></li>
-									<li><a href="#">Lease Administration</a></li>
-									<li><a href="#">Tenant Coordination</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-sm-6">
-							<div class="footer-widget">
-								<ul class="footer-widget-menu list-unstyled">
-									<li class="title"><a href="#">Green Seal</a></li>
-									<li><a href="#">Environmental Engineering</a></li>
-									<li><a href="#">Civil Engineering</a></li>
-									<li><a href="#">Land Surveying</a></li>
-									<li><a href="#">3D Laser Scanning</a></li>
-									<li><a href="#">Energy</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-sm-6">
-							<div class="footer-widget">
-								<ul class="footer-widget-menu list-unstyled">
-									<li class="title"><a href="#">Facilities Performance Services</a></li>
-									<li><a href="#">Regulatory Preparedness</a></li>
-									<li><a href="#">Organizational Integration</a></li>
-									<li><a href="#">Facilities Management</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="copyright-wrapper">	
-				<div class="row lr-10 align-items-center">
-					<div class="offset-lg-3 col-lg-4 col-sm-6">
-						<ul class="social-media list-inline">
-						  	<li><a href="#" class="icon-twitter" target="_blank"></a></li>
-						  	<li><a href="#" class="icon-linkedin" target="_blank"></a></li>
-						  	<li><a href="#" class="icon-rss" target="_blank"></a></li>
-						</ul>
-					</div>
-
-					<div class="col-lg-5 col-sm-6">
-						<div class="copyright">
-							<p>Copyright &copy;2021 CREF™. All Rights Reserved Copyright</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer><!-- /footer -->
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="js/jquery.min.js"></script>
-	<script src="../js/plugins.js"></script>
-	<script src="../js/scripts.js"></script>
-</body>
-</html>
+    get_footer();
+?>

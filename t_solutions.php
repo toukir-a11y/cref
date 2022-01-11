@@ -81,9 +81,20 @@
 							<div class="text">
 								<h5 class="title"><?php the_title();?></h5>
 
+                                
 								<ul class="arrow-lists list-unstyled">
-									<?php the_content();?>
+                                <?php $points = $meta['points']; if( !empty($points) ){ foreach( $points as $point ) 
+                                    {
+                                            if( ($point['text']) )
+                                            {
+                                                printf( '<li>%s</li>', $point['text'] );
+                                            }
+                                        }
+
+                                    } 
+							    ?>
 								</ul>
+                               
                                 <?php
                                     if( $meta['text'] )
                                     {
