@@ -72,103 +72,100 @@
 				</div>
 			</div>
 		</section><!-- /about-page -->
-    <?php endif; ?>    
-
+    <?php endif; ?>    	
+	<?php $market = get_field('markets'); if( !empty($market) ):?>
 		<section class="markets-forward">
 			<div class="container">
 				<div class="row lr-10 minus align-items-center">
-					<div class="col-lg-4">
-						<div class="content">
-							<h3 class="title">CREF Drives Markets Forward</h3>
-							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo</p>
+					<?php if( !empty($market['title'] || $market['content']) ):?>
+						<div class="col-lg-4">
+							<div class="content">
+								<?php
+									if( $market['title'] )
+									{
+										printf( '<h3 class="title">%s</h3>', $market['title'] );
+									}
+									if( $market['content'] )
+									{
+										printf( '%s', $market['content'] );
+									}
+								?>
+							</div>
 						</div>
-					</div>
-
+					<?php endif; ?>
+				<?php $videos = $market['popup_video']; if( !empty($videos) ): foreach( $videos as $video ): ?>
 					<div class="col-lg-4 col-sm-6">
-						<a href="https://www.youtube.com/watch?v=QUCFquGq3CE" class="drives-market-item popup-video">
-							<div class="media">
-								<img src="../images/drives-market-item-1.jpg" class="img-fluid" alt="">
-							</div>
-
+						<a href="<?php if( $video['url'] ): echo esc_url( $video['url'] ); endif;?>" class="drives-market-item popup-video">
+							<?php
+								if( $video['image'] )
+								{
+									printf( '<div class="media"><img src="%s" class="img-fluid" alt="%s"></div>'
+									, esc_url( $video['image']['url']), 'alt'  );
+								}
+							?>
 							<div class="text d-flex flex-column align-items-center justify-content-center">
-								<div class="icon">
-									<img src="../images/svg/healthcare.svg" class="img-fluid" alt="">
-								</div>
-								<h5 class="title">Healthcare</h5>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
-
-								<button class="btn">Watch Video</button>
+								<?php
+									if( $video['icon_image'] )
+									{
+										printf( '<div class="icon"><img src="%s" class="img-fluid" alt="%s"></div>'
+										, esc_url($video['icon_image']['url']), 'alt' );
+									}
+									if( $video['title'] )
+									{
+										printf( '<h5 class="title">%s</h5>', $video['title'] );
+									}
+									if( $video['content'] )
+									{
+										printf( '%s', $video['content'] );
+									}
+									if( $video['button_text'] )
+									{
+										printf( '<button class="btn">%s</button>', $video['button_text'] );
+									}
+								?>
 							</div>
 						</a>
 					</div>
-
-					<div class="col-lg-4 col-sm-6">
-						<a href="#" class="drives-market-item">
-							<div class="media">
-								<img src="../images/drives-market-item-2.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text d-flex flex-column align-items-center justify-content-center">
-								<div class="icon">
-									<img src="../images/svg/public-sector.svg" class="img-fluid" alt="">
+				<?php endforeach; 
+					endif; 	
+				?>	
+					<?php $images= $market['popup_image']; if( !empty( $images ) ): foreach( $images as $image ): if( !empty( $image ) ):   ?>
+						<div class="col-lg-4 col-sm-6">
+							<a href="<?php echo esc_url( $image['url']['url']  );?>" class="drives-market-item">
+								<?php
+									if( $image['image'] )
+									{
+										printf( '<div class="media"><img src="%s" class="img-fluid" alt="%s"></div>'
+										, esc_url( $image['image']['url'] ), 'alt' );
+									}
+								?>	  
+								<div class="text d-flex flex-column align-items-center justify-content-center">
+									<?php
+										if( $image['icon_image'] ) 
+										{
+											printf( '<div class="icon"><img src="%s" class="img-fluid" alt="%s"></div>'
+											, esc_url( $image['icon_image']['url'] ), 'alt' );
+										}
+										if( $image['title'] )
+										{
+											printf( '<h5 class="title">%s</h5>', $image['title'] );
+										}
+										if( $image['content'] )
+										{
+											printf( '%s', $image['content'] );
+										}
+									?>
 								</div>
-								<h5 class="title">Public Sector</h5>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-lg-4 col-sm-6">
-						<a href="#" class="drives-market-item">
-							<div class="media">
-								<img src="../images/drives-market-item-3.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text d-flex flex-column align-items-center justify-content-center">
-								<div class="icon">
-									<img src="../images/svg/commercial.svg" class="img-fluid" alt="">
-								</div>
-								<h5 class="title">Commercial</h5>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-lg-4 col-sm-6">
-						<a href="#" class="drives-market-item">
-							<div class="media">
-								<img src="../images/drives-market-item-4.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text d-flex flex-column align-items-center justify-content-center">
-								<div class="icon">
-									<img src="../images/svg/life-science.svg" class="img-fluid" alt="">
-								</div>
-								<h5 class="title">Life Science</h5>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-lg-4 col-sm-6">
-						<a href="#" class="drives-market-item">
-							<div class="media">
-								<img src="../images/drives-market-item-5.jpg" class="img-fluid" alt="">
-							</div>
-
-							<div class="text d-flex flex-column align-items-center justify-content-center">
-								<div class="icon">
-									<img src="../images/svg/book.svg" class="img-fluid" alt="">
-								</div>
-								<h5 class="title">Education</h5>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
-							</div>
-						</a>
-					</div>
-				</div>
+							</a>
+						</div>
+						
+					<?php 
+						 endif; endforeach; endif; 		
+					?>	
+				</div>	
 			</div>
 		</section><!-- /markets-forward -->
-
+	<?php endif;?>	
 		<section class="solutions-group">
 			<div class="container">
 				<div id="solution-1" class="solutions-group-item">
