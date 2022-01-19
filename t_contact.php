@@ -8,21 +8,18 @@
     $location = $option['locations'];  $widget = $location['widgets']; 
  ?>
 
-
-	<div class="header_gutter"></div>
-
 	<div id="primary" class="content-area">
 
-    <?php 
-        if( !empty($image) )
-        {
-            printf( '<div class="page-header"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url($image['url']), 'alt' );
-        }
-        else
-        {
-            printf( '<div class="page-header"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url( get_theme_file_uri( '/images/page-header-contact.jpg' ) ),'alt' );
-        }
-    ?>
+        <?php 
+            if( !empty($image) )
+            {
+                printf( '<div class="page-header"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url($image['url']), 'alt' );
+            }
+            else
+            {
+                printf( '<div class="page-header"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url( get_theme_file_uri( '/images/page-header-contact.jpg' ) ),'alt' );
+            }
+        ?>
 
 		<section class="breadcrumb-wrapper">
 		    <div class="container">

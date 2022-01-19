@@ -1,13 +1,20 @@
-<?php get_header();?>
+<?php get_header();
 
-
-	<div class="header_gutter"></div>
+$content = get_field( 'content', 173 );
+?>
 
 	<div id="primary" class="content-area">
 
-		<div class="page-header blog">
-			<img src="<?php echo get_theme_file_uri();?>/images/page-header-blog.jpg" class="img-fluid" alt="">
-		</div>
+		<?php
+			if( !empty($content['image']) )
+			{
+				printf( '<div class="page-header blog"><img src="%s" class="img-fluid" alt="%s"></div>', $content['image']['url'], 'alt' );
+			}
+			else
+			{
+				printf( '<div class="page-header blog"><img src="%s" class="img-fluid" alt="%s"></div>', esc_url( get_theme_file_uri( '/images/page-header-blog.jpg' ) ),'alt' );
+			}
+		?>	
 
 		<section class="breadcrumb-wrapper">
 		    <div class="container">
@@ -26,105 +33,105 @@
 		<section class="featured-posts">
 			<div class="container">
 				<div class="row lr-10 minus">
-					<div class="col-12">
-						<article class="featured-post big">
+					<?php
+					
+						$counter = 1;
+
+						$args = array(
+							'post_type'         => 'post',                       
+							'posts_per_page'    =>  4,
+							'meta_key'          => '_is_ns_featured_post',
+							'meta_value' => 'yes'
+						);
+							
+						$the_query = new WP_Query($args); 
+
+						if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); 
+											
+						$class = $counter == 1 ? 'featured-post big' : 'featured-post';
+						$column = $counter == 1 ? 'col-12' : 'col-lg-4 col-sm-6';
+					?> 
+					<div class="<?php echo $column; ?>">
+						<article class="<?php echo $class; ?>">
 							<div class="media">
-								<a href="blog-details.html">
-									<img src="<?php echo get_theme_file_uri();?>/images/featured-post-1.jpg" class="img-fluid" alt="">
+								<a href="<?php echo esc_url( the_permalink() );?>">
+									<?php
+										if( has_post_thumbnail() )
+										{
+											if( $counter == 1 )
+
+											{
+												the_post_thumbnail('post_featured_big', array('class'=>'img-fluid') );
+											}
+											else 
+											{
+												the_post_thumbnail('post_featured', array('class'=>'img-fluid') );
+											}
+										}
+										else
+										{
+											if ( $counter == 1 ) 
+											{
+												printf( '<img src="%s" class="img-fluid" alt="%s">', get_theme_file_uri( 'images/placeholder-featured-thumb-big.jpg' ), get_the_title() );
+											}
+											else
+											{
+												printf( '<img src="%s" class="img-fluid" alt="%s">', get_theme_file_uri( 'images/placeholder-featured-thumb.jpg' ), get_the_title() );
+											}
+										}
+									?> 
 								</a>
 							</div>
-
 							<div class="text">
-								<ul class="categories list-inline">
-									<li><a href="#">Category Title</a></li>
-								</ul>
+								<?php
+									$categories = get_the_category();
 
-								<a href="blog-details.html">
-									<h3 class="title">The Future of Trust</h3>
-								</a>
+									if( $categories	)
+									{
+										echo '<ul class="categories list-inline">';
 
-								<div class="excerpt">
-									<p>Lorem ipsum dolor sit amet, consetetur elit sadipscing elitr, sed diam nonumy.</p>
-								</div>
+											foreach( $categories as $cat )
+											{
+												printf( '<li><a href="%s">%s</a></li>', esc_url( get_category_link( $cat ) ), $cat->name );
 
-								<a href="blog-details.html" class="btn primary text-uppercase">Read The Report</a>
+												break;
+											}
+									}
+									    echo '</ul>';
+								?>								
+								<a href="<?php echo the_permalink();?>">
+									<?php
+										if( $counter == 1 )
+										{
+											printf( '<h3 class="title">%s</h3>', the_title() );
+										}
+										else 
+										{
+											printf( '<h5 class="title">%s</h5>', the_title() );
+										}									
+									?>
+								</a>								
+								<?php 
+									if( has_excerpt() )
+									{
+										printf( '<div class="excerpt">%s</div>', the_excerpt() );
+									}
+							
+									if( $counter == 1 )
+									{
+										printf( '<a href="%s" class="btn primary text-uppercase">%s</a>',  get_the_permalink(get_the_ID()), 'READ THE REPORT' );
+									}							
+								?>								
 							</div>
 						</article>
-
-						<hr class="two">
+						<?php echo $counter == 1 ? '<hr class="two">' : '';?>
 					</div>
-
-					<div class="col-lg-4 col-sm-6">
-						<article class="featured-post">
-							<div class="media">
-								<a href="blog-details.html">
-									<img src="<?php echo get_theme_file_uri();?>/images/featured-post-2.jpg" class="img-fluid" alt="">
-								</a>
-							</div>
-
-							<div class="text">
-								<ul class="categories list-inline">
-									<li><a href="#">Category Title</a></li>
-								</ul>
-
-								<a href="blog-details.html">
-									<h5 class="title">A new playbook for talent</h5>
-								</a>
-
-								<div class="excerpt">
-									<p>Lorem ipsum dolor sit amet, consetetur elit sadipscing elitr, sed diam nonumy.</p>
-								</div>
-							</div>
-						</article>
-					</div>
-
-					<div class="col-lg-4 col-sm-6">
-						<article class="featured-post">
-							<div class="media">
-								<a href="blog-details.html">
-									<img src="<?php echo get_theme_file_uri();?>/images/featured-post-3.jpg" class="img-fluid" alt="">
-								</a>
-							</div>
-
-							<div class="text">
-								<ul class="categories list-inline">
-									<li><a href="#">Category Title</a></li>
-								</ul>
-
-								<a href="blog-details.html">
-									<h5 class="title">A new playbook for talent</h5>
-								</a>
-
-								<div class="excerpt">
-									<p>Lorem ipsum dolor sit amet, consetetur elit sadipscing elitr, sed diam nonumy.</p>
-								</div>
-							</div>
-						</article>
-					</div>
-
-					<div class="col-lg-4 col-sm-6">
-						<article class="featured-post">
-							<div class="media">
-								<a href="blog-details.html">
-									<img src="<?php echo get_theme_file_uri();?>/images/featured-post-4.jpg" class="img-fluid" alt="">
-								</a>
-							</div>
-
-							<div class="text">
-								<ul class="categories list-inline">
-									<li><a href="#">Category Title</a></li>
-								</ul>
-
-								<a href="blog-details.html">
-									<h5 class="title">A new playbook for talent</h5>
-								</a>
-
-								<div class="excerpt">
-									<p>Lorem ipsum dolor sit amet, consetetur elit sadipscing elitr, sed diam nonumy.</p>
-								</div>
-							</div>
-						</article>
-					</div>
+						<?php
+									$counter++;
+								endwhile;
+							endif;
+						wp_reset_query();
+						?>
 				</div>
 			</div>
 		</section><!-- /featured-posts -->

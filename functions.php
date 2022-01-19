@@ -5,8 +5,15 @@ require_once('wp_bootstrap_navwalker.php');
 function cref_setup() {
     
     load_theme_textdomain( "cref" );
-    add_theme_support( 'post-thumbnails' );
     add_theme_support( 'title-tag' );
+    add_theme_support( 'post-thumbnails' );
+    add_image_size( 'post_thumb', 180, 110, true );
+    add_image_size( 'post_single', 1180, 340, true );
+    add_image_size( 'post_popular', 380, 440, true );
+    add_image_size( 'post_featured', 380, 130, true );
+    add_image_size( 'post_featured_big', 671, 671, true );
+    add_image_size( 'careers_thumb', 580, 349, true );
+    add_image_size( 'team_thumb', 280, 380, true );
 
     //register menu
     register_nav_menus( array(

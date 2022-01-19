@@ -161,5 +161,5 @@
 		  	</div><!-- /container-fluid -->
 		</div><!--/ Navbar -->
 	</header>
-
+	<div class="header_gutter"></div>
 	

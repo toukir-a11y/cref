@@ -4,9 +4,7 @@
  get_header();
  
  ?>
-
-<div class="header_gutter"></div>
-
+ 
 <div id="primary" class="content-area">
 
     <section class="breadcrumb-wrapper">

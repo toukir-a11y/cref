@@ -4,8 +4,6 @@
  get_header();
 
  ?>
- 
-	<div class="header_gutter"></div>
 
 	<div id="primary" class="content-area">
 
@@ -199,32 +197,6 @@
 											</div>
 										</div>
 									</a>
-
-									<a href="#" class="solution-service-item d-flex align-items-end">
-										<div class="media">
-											<img src="../images/solution-service-item-2.jpg" class="img-fluid" alt="">
-										</div>
-
-										<div class="text">
-											<div class="center">
-												<h5 class="title">This should be linked to something to do with Capital Program Management. Whatever that may be.</h5>
-												<p>See how CREF’s CPM Helped</p>
-											</div>
-										</div>
-									</a>
-
-									<a href="#" class="solution-service-item d-flex align-items-end">
-										<div class="media">
-											<img src="../images/solution-service-item-3.jpg" class="img-fluid" alt="">
-										</div>
-
-										<div class="text">
-											<div class="center">
-												<h5 class="title">A link goes here about a company or a client that benefitted from facilities performance services.</h5>
-												<p>See how CREF’s CPM Helped</p>
-											</div>
-										</div>
-									</a>
 								</div>
 
 								<div class="slide-controls d-flex align-items-center justify-content-between">
@@ -232,137 +204,6 @@
 										<span class="slider-arrow sarrow-prev">Previous</span>
 										<span class="slider-arrow sarrow-next">Next</span>
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="solution-2" class="solutions-group-item">
-					<div class="row lr-10">
-						<div class="col-md-6">
-							<div class="content">
-								<h3 class="title">Capital Program Management</h3>
-								<p>Unlike other real estate management companies serving multiple industries, CREF has  pioneered the application of state-of-the-art real estate tools and management to the health.</p>
-								<ul class="arrow-lists list-unstyled">
-									<li>Capital Budget Planning</li>
-									<li>Staff Programming & Fit Planning</li>
-									<li>Owners Project Management</li>
-									<li>Funding Requisition & Allocation</li>
-								</ul>
-								<a href="solution-details.html" class="btn text-uppercase">View CPM Services</a>
-							</div>
-						</div>
-
-						<div class="col-md-6">
-							<div class="solution-services">
-								<div class="solution-services-slider">
-									<a href="#" class="solution-service-item d-flex align-items-end">
-										<div class="media">
-											<img src="../images/solution-service-item-2.jpg" class="img-fluid" alt="">
-										</div>
-
-										<div class="text">
-											<div class="center">
-												<h5 class="title">This is a free form box where we can link to whatever we want. Something to do with Real Estate Services</h5>
-												<p>Discover the CREF Difference</p>
-											</div>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="solution-3" class="solutions-group-item">
-					<div class="row lr-10">
-						<div class="col-md-6">
-							<div class="content">
-								<h3 class="title">Facilities Performance Services</h3>
-								<p>Unlike other real estate management companies serving multiple industries, CREF has  pioneered the application of state-of-the-art real estate tools and management to the health.</p>
-								<ul class="arrow-lists list-unstyled">
-									<li>Capital Budget Planning</li>
-									<li>Property Management</li>
-									<li>Lease Administration</li>
-									<li>Tenant Coordination</li>
-								</ul>
-								<a href="solution-details.html" class="btn text-uppercase">View CPM Services</a>
-							</div>
-						</div>
-
-						<div class="col-md-6">
-							<div class="solution-services">
-								<div class="solution-services-slider">
-									<a href="#" class="solution-service-item d-flex align-items-end">
-										<div class="media">
-											<img src="../images/solution-service-item-3.jpg" class="img-fluid" alt="">
-										</div>
-
-										<div class="text">
-											<div class="center">
-												<h5 class="title">A link goes here about a company or a client that benefitted from facilities performance services.</h5>
-												<p>See how CREF’s CPM Helped</p>
-											</div>
-										</div>
-									</a>
-
-									<a href="#" class="solution-service-item d-flex align-items-end">
-										<div class="media">
-											<img src="../images/solution-service-item-1.jpg" class="img-fluid" alt="">
-										</div>
-
-										<div class="text">
-											<div class="center">
-												<h5 class="title">This is a free form box where we can link to whatever we want. Something to do with Real Estate Services</h5>
-												<p>Discover the CREF Difference</p>
-											</div>
-										</div>
-									</a>
-								</div>
-
-								<div class="slide-controls d-flex align-items-center justify-content-between">
-									<div class="slider-arrows">
-										<span class="slider-arrow sarrow-prev">Previous</span>
-										<span class="slider-arrow sarrow-next">Next</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="solution-4" class="solutions-group-item">
-					<div class="row lr-10">
-						<div class="col-md-6">
-							<div class="content">
-								<h3 class="title">Engineering & Energy</h3>
-								<p>Unlike other real estate management companies serving multiple industries, CREF has  pioneered the application of state-of-the-art real estate tools and management to the health.</p>
-								<ul class="arrow-lists list-unstyled">
-									<li>Development/Acquisitions Disposition</li>
-									<li>Property Management</li>
-									<li>Lease Administration</li>
-									<li>Tenant Coordination</li>
-								</ul>
-								<a href="solution-details.html" class="btn text-uppercase">View CPM Services</a>
-							</div>
-						</div>
-
-						<div class="col-md-6">
-							<div class="solution-services">
-								<div class="solution-services-slider">
-									<a href="#" class="solution-service-item d-flex align-items-end">
-										<div class="media">
-											<img src="../images/solution-service-item-4.jpg" class="img-fluid" alt="">
-										</div>
-
-										<div class="text">
-											<div class="center">
-												<h5 class="title">A link goes here about a company or a client that benefitted from facilities performance services.</h5>
-												<p>See how CREF’s CPM Helped</p>
-											</div>
-										</div>
-									</a>
 								</div>
 							</div>
 						</div>
